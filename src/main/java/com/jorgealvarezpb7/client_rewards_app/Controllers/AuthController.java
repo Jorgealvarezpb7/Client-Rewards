@@ -1,14 +1,20 @@
 package com.jorgealvarezpb7.client_rewards_app.Controllers;
 
-import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
-import com.jorgealvarezpb7.client_rewards_app.App;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public class AuthController {
+    @FXML private Text actiontarget;
+    @FXML private TextField usernameField;
+    @FXML private PasswordField passwordField;
+    
+    @FXML protected void handleSubmitButtonAction(ActionEvent event) {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
 
-    @FXML
-    private void logIn() throws IOException {
-        App.setRoot("secondary");
+        actiontarget.setText(username + " " + password);
     }
 }
