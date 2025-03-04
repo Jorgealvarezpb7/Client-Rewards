@@ -14,14 +14,11 @@
    <children>
       <Pane layoutX="236.0" layoutY="104.0" prefHeight="254.0" prefWidth="180.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="100.0">
          <children>
-            <TextField fx:id="usernameField" alignment="TOP_CENTER" layoutX="8.0" layoutY="100.0" prefHeight="20.0" prefWidth="160.0" />
+            <TextField fx:id="usernameField" layoutX="8.0" layoutY="100.0" prefHeight="20.0" prefWidth="160.0" />
             <Label layoutX="11.0" layoutY="81.0" text="Usuario:" />
             <Label layoutX="11.0" layoutY="135.0" prefHeight="18.0" prefWidth="74.0" text="Contrasena:" />
             <Button onAction="#handleSubmitButtonAction" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="200.0" minWidth="53.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="53.0" text="Entrar" />
-            <PasswordField fx:id="passwordField" layoutX="8.0" layoutY="155.0" prefHeight="20.0" prefWidth="160.0">
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" />
-               </padding></PasswordField>
+            <PasswordField fx:id="passwordField" layoutX="8.0" layoutY="155.0" prefHeight="20.0" prefWidth="160.0" />
             <ImageView fitHeight="47.0" fitWidth="46.0" layoutX="69.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/concho.png" />
