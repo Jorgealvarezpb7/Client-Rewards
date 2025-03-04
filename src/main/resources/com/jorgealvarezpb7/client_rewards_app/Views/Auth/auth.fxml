@@ -24,7 +24,7 @@
                </padding></PasswordField>
             <ImageView fitHeight="47.0" fitWidth="46.0" layoutX="69.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Captura%20de%20pantalla%202025-01-18%20a%20las%2019.13.27.png" />
+                  <Image url="@../../Images/concho.png" />
                </image></ImageView>
          </children>
       </Pane>
