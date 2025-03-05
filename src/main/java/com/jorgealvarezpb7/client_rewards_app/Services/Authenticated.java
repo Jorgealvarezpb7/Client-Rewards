@@ -17,4 +17,8 @@ public class Authenticated {
     @FXML protected void goToClients(ActionEvent event) throws IOException {
         App.setRoot("Views/Clients/template");
     }
+
+    @FXML protected void goToDashboard(ActionEvent event) throws IOException {
+        App.setRoot("Views/Dashboard/template");
+    }
 }
