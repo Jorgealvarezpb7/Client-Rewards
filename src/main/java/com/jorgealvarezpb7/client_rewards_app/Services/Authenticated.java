@@ -14,11 +14,43 @@ public class Authenticated {
         db = new Database();
     }
 
-    @FXML protected void goToClients(ActionEvent event) throws IOException {
+    @FXML
+    protected void goToClients(ActionEvent event) throws IOException {
         App.setRoot("Views/Clients/template");
     }
 
-    @FXML protected void goToDashboard(ActionEvent event) throws IOException {
+    @FXML
+    protected void goToDashboard(ActionEvent event) throws IOException {
         App.setRoot("Views/Dashboard/template");
+    }
+
+    @FXML
+    protected void goToInventory(ActionEvent event) throws IOException {
+        App.setRoot("Views/Inventory/template");
+    }
+
+    @FXML
+    protected void goToSales(ActionEvent event) throws IOException {
+        App.setRoot("Views/Sales/template");
+    }
+
+    @FXML
+    protected void goToClientInfo(ActionEvent event) throws IOException {
+        App.setRoot("Views/ClientInfo/template");
+    }
+
+    @FXML
+    protected void goToNewClientForm(ActionEvent event) throws IOException {
+        App.setRoot("Views/NewClientForm/template");
+    }
+
+    @FXML
+    protected void goToNewProductForm(ActionEvent event) throws IOException {
+        App.setRoot("Views/NewProductForm/template");
+    }
+
+    @FXML
+    protected void goToNewSaleForm(ActionEvent event) throws IOException {
+        App.setRoot("Views/NewSaleForm/template");
     }
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgealvarezpb7.client_rewards_app.Controllers.NewSaleFormController">
+   <children>
+      <Pane layoutX="412.0" layoutY="173.0" prefHeight="307.0" prefWidth="200.0" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="412.0" AnchorPane.topAnchor="110.0">
+         <children>
+            <TextField layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="178.0" />
+            <Label layoutX="11.0" layoutY="68.0" text="Cantidad" />
+            <Label layoutX="10.0" layoutY="120.0" prefHeight="18.0" prefWidth="74.0" text="Cliente" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="241.0" minWidth="53.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="119.0" text="Registrar Venta" />
+            <TextField layoutX="10.0" layoutY="139.0" prefHeight="27.0" prefWidth="178.0" />
+            <Label layoutX="11.0" layoutY="14.0" text="Producto" />
+            <TextField layoutX="10.0" layoutY="32.0" prefHeight="26.0" prefWidth="178.0" />
+            <Label layoutX="10.0" layoutY="174.0" prefHeight="18.0" prefWidth="74.0" text="Monto Total" />
+            <TextField layoutX="10.0" layoutY="193.0" prefHeight="27.0" prefWidth="178.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
