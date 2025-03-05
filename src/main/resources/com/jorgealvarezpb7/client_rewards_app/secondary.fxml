@@ -7,7 +7,7 @@
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgealvarezpb7.client_rewards_app.SecondaryController">
     <children>
-        <Label text="Secondary View" />
+        <Label text="THIS IS CLIENTS!" />
         <Button fx:id="secondaryButton" text="Switch to Primary View" onAction="#switchToPrimary" />
     </children>
     <padding>

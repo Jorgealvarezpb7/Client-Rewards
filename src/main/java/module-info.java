@@ -9,4 +9,7 @@ module com.jorgealvarezpb7.client_rewards_app {
 
     opens com.jorgealvarezpb7.client_rewards_app.Controllers to javafx.fxml;
     exports com.jorgealvarezpb7.client_rewards_app.Controllers;
+
+    opens com.jorgealvarezpb7.client_rewards_app.Services to javafx.fxml;
+    exports com.jorgealvarezpb7.client_rewards_app.Services;
 }

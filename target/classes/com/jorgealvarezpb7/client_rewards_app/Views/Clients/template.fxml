@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="parent" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgealvarezpb7.client_rewards_app.Controllers.DashboardController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="50.0" styleClass="sidebar" stylesheets="@../stylesheet.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="13.0" layoutY="561.0">
+               <children>
+                  <FontAwesomeIconView glyphName="" size="25" />
+               </children>
+            </VBox>
+            <Separator layoutX="6.0" layoutY="546.0" prefHeight="3.0" prefWidth="38.0" />
+            <Button alignment="CENTER" layoutY="65.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="54.0" style="-fx-background-color: #FFFFFF;">
+               <graphic>
+                  <FontAwesomeIconView fill="#990000" glyphName="USER" size="20" text="" wrappingWidth="20.66176414489746" />
+               </graphic>
+            </Button>
+            <Button onAction="#goToClients" alignment="CENTER" layoutX="-4.0" layoutY="11.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="54.0" style="-fx-background-color: #FFFFFF;" />
+            <FontAwesomeIconView glyphName="USER" layoutX="14.0" layoutY="45.0" size="20" text="" wrappingWidth="20.66176414489746" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" style="-fx-background-color: #f3f3f3;" stylesheets="@stylesheet.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="40.0" layoutY="1.0" prefHeight="250.0" prefWidth="850.0" styleClass="pane" stylesheets="@../stylesheet.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="Dashboard">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Separator orientation="VERTICAL">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Separator>
+                        <Label layoutX="10.0" layoutY="10.0" text="Hola, Bienvenido de vuelta!" textFill="#0000006c">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="136.0" layoutY="10.0" maxWidth="1.7976931348623157E308" text="20:45   06 Mar 2025" textFill="#0000006c" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="30.0" top="25.0" />
+                     </VBox.margin>
+                     <children>
+                        <VBox prefHeight="169.0" prefWidth="111.0">
+                           <children>
+                              <Label text="Progreso diario:" textFill="#0000006c">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <AnchorPane minHeight="140.0" prefHeight="143.0" prefWidth="200.0" styleClass="colored_display">
+                           <children>
+                              <Label text="Ingresos:" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="12.0" layoutY="76.0" text="200,65" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="121.0" layoutY="10.0" prefHeight="130.0" prefWidth="200.0" styleClass="colored_display">
+                           <children>
+                              <Label text="Numero de ventas:" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="12.0" layoutY="76.0" text="13" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane layoutX="321.0" layoutY="10.0" prefHeight="130.0" prefWidth="200.0" styleClass="colored_display">
+                           <children>
+                              <Label text="Ticket Medio:" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="12.0" layoutY="76.0" text="15,43" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
