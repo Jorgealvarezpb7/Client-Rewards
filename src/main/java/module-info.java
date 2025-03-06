@@ -12,4 +12,7 @@ module com.jorgealvarezpb7.client_rewards_app {
 
     opens com.jorgealvarezpb7.client_rewards_app.Services to javafx.fxml;
     exports com.jorgealvarezpb7.client_rewards_app.Services;
+
+    opens com.jorgealvarezpb7.client_rewards_app.Models to javafx.fxml;
+    exports com.jorgealvarezpb7.client_rewards_app.Models;
 }

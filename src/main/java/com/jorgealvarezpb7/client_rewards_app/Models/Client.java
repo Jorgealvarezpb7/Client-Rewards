@@ -1,0 +1,17 @@
+package com.jorgealvarezpb7.client_rewards_app.Models;
+
+public class Client {
+    private String name;
+
+    public Client(String name) { 
+        this.name = name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}

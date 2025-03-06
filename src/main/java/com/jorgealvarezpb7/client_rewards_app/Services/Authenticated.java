@@ -9,9 +9,12 @@ import javafx.fxml.FXML;
 
 public class Authenticated {
     protected Database db;
+    public ClientService clientService;
 
     public Authenticated() {
         db = new Database();
+        db.runMigrations();
+        clientService = new ClientService(); 
     }
 
     @FXML

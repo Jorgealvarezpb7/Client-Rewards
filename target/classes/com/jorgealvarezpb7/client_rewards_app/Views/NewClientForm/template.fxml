@@ -10,15 +10,15 @@
    <children>
       <Pane layoutX="220.0" layoutY="110.0" prefHeight="315.0" prefWidth="200.0" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="412.0" AnchorPane.topAnchor="110.0">
          <children>
-            <TextField layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="178.0" />
+            <TextField fx:id="clientPhoneField" layoutX="10.0" layoutY="139.0" prefHeight="27.0" prefWidth="178.0" promptText="Movil del Cliente" />
+            <Label layoutX="11.0" layoutY="14.0" text="Nombre" />
+            <TextField fx:id="clientSurnameField" layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="178.0" promptText="Apellido del Cliente" />
             <Label layoutX="11.0" layoutY="68.0" text="Apellido" />
             <Label layoutX="10.0" layoutY="120.0" prefHeight="18.0" prefWidth="74.0" text="Movil" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="249.0" minWidth="53.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="90.0" text="Crear Cliente" />
-            <TextField layoutX="10.0" layoutY="139.0" prefHeight="27.0" prefWidth="178.0" />
-            <Label layoutX="11.0" layoutY="14.0" text="Nombre" />
-            <TextField layoutX="10.0" layoutY="32.0" prefHeight="26.0" prefWidth="178.0" />
+            <TextField fx:id="clientNameField" layoutX="10.0" layoutY="32.0" prefHeight="26.0" prefWidth="178.0" promptText="Nombre del Cliente" />
             <Label layoutX="10.0" layoutY="174.0" prefHeight="18.0" prefWidth="74.0" text="Correo" />
-            <TextField layoutX="10.0" layoutY="193.0" prefHeight="27.0" prefWidth="178.0" />
+            <TextField fx:id="clientEmailField" layoutX="10.0" layoutY="193.0" prefHeight="27.0" prefWidth="178.0" promptText="Correo del Cliente" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="249.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateClient" prefHeight="31.0" prefWidth="90.0" text="Crear Cliente" />
          </children>
       </Pane>
    </children>
