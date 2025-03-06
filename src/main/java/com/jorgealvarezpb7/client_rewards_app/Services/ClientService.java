@@ -13,7 +13,7 @@ public class ClientService {
     public void createClient(String name) {
         //if (name.isEmpty()) { 
         String query = """
-            INES
+            INSERT
         """;
         try {
             PreparedStatement ps = db.getConn().prepareStatement(query);
