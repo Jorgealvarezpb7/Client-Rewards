@@ -12,10 +12,9 @@ public class ClientService {
 
     public void createClient(String name) {
         //if (name.isEmpty()) { 
-        String query = "INSERT INTO\n" + //
-                        "\tclients (name)\n" + //
-                        "VALUES\n" + //
-                        "\t(?)";
+        String query = """
+            INES
+        """;
         try {
             PreparedStatement ps = db.getConn().prepareStatement(query);
         ps.setString(1, name);

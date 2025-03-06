@@ -19,9 +19,7 @@ public class Database {
     public void runMigrations() {
         try {
             Statement st = conn.createStatement();
-            st.execute("CREATE TABLE IF NOT EXISTS clients (\n" + //
-                            "  name TEXT\n" + //
-                            ")");
+            st.execute("CREATE TABLE IF NOT EXISTS clients (name TEXT, surname TEXT, phone TEXT, email TEXT, created_at INTEGER)");
         } catch (SQLException err) {
             System.err.println(err.toString());
         }
