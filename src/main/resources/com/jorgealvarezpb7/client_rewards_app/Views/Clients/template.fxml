@@ -104,10 +104,10 @@
                         <Insets bottom="30.0" top="25.0" />
                      </VBox.margin>
                      <children>
-                        <TableView prefHeight="340.0" prefWidth="800.0">
+                        <TableView fx:id="clientsTable" prefHeight="340.0" prefWidth="800.0">
                           <columns>
-                            <TableColumn prefWidth="133.0" text="Nombre" />
-                            <TableColumn prefWidth="133.0" text="Apellidos" />
+                            <TableColumn fx:id="nameColumn" prefWidth="133.0" text="Nombre" />
+                            <TableColumn fx:id="surnameColumn" prefWidth="133.0" text="Apellidos" />
                             <TableColumn prefWidth="133.0" text="Movil" />
                             <TableColumn prefWidth="133.0" text="Correo" />
                             <TableColumn prefWidth="133.0" text="Puntos" />
