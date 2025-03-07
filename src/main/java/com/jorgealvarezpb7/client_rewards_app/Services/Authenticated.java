@@ -10,11 +10,13 @@ import javafx.fxml.FXML;
 public class Authenticated {
     protected Database db;
     public ClientService clientService;
+    public ProductService productService;
 
     public Authenticated() {
         db = new Database();
         db.runMigrations();
-        clientService = new ClientService(); 
+        clientService = new ClientService();
+        productService = new ProductService();
     }
 
     @FXML

@@ -19,6 +19,9 @@ public class ClientsController extends Authenticated implements Initializable{
     @FXML private TableView<Client> clientsTable;
     @FXML private TableColumn<Client, String> nameColumn;
     @FXML private TableColumn<Client, String> surnameColumn;
+    @FXML private TableColumn<Client, String> phoneColumn;
+    @FXML private TableColumn<Client, String> emailColumn;
+    @FXML private TableColumn<Client, Integer> created_atColumn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -27,6 +30,9 @@ public class ClientsController extends Authenticated implements Initializable{
 
         nameColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("name"));
         surnameColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("surname"));
+        phoneColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("phone"));
+        emailColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("email"));
+        created_atColumn.setCellValueFactory(new PropertyValueFactory<Client, Integer>("created_at"));
         clientsTable.setItems(clientsObs);
     }
 }

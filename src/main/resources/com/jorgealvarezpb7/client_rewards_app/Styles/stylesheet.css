@@ -14,7 +14,8 @@
 
 .pane{
   -fx-background-color:#FFFFFF;
-  -fx-border-color:#C1C1C1;
+  -fx-border-color:#1A3384;
+  -fx-border-width:3px;
   -fx-background-radius:0px 0px 30px 30px;
   -fx-border-radius:0px 0px 30px 30px;
 }

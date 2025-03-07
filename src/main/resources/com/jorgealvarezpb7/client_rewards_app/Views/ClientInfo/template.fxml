@@ -71,7 +71,7 @@
    <center>
       <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" style="-fx-background-color: #f3f3f3;" stylesheets="@../../Styles/stylesheet.css" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="40.0" layoutY="1.0" prefHeight="250.0" prefWidth="850.0" styleClass="pane" stylesheets="@../stylesheet.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+            <VBox layoutX="40.0" layoutY="-3.0" prefHeight="250.0" prefWidth="850.0" style="-fx-border-width: 3px;" styleClass="pane" stylesheets="@../stylesheet.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="-3.0">
                <children>
                   <HBox>
                      <children>

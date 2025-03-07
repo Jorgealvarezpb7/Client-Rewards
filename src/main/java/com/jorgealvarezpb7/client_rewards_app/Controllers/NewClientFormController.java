@@ -2,6 +2,7 @@ package com.jorgealvarezpb7.client_rewards_app.Controllers;
 
 import java.io.IOException;
 
+import com.jorgealvarezpb7.client_rewards_app.App;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
 
 import javafx.event.ActionEvent;
@@ -20,5 +21,6 @@ public class NewClientFormController extends Authenticated {
         String clientPhone = clientPhoneField.getText();
         String clientEmail = clientEmailField.getText();
         this.clientService.createClient(clientName, clientSurname, clientPhone, clientEmail);
+        App.setRoot("Views/Clients/template");
     }
 }

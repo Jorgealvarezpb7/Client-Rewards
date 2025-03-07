@@ -7,23 +7,23 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-import com.jorgealvarezpb7.client_rewards_app.Models.Client;
+import com.jorgealvarezpb7.client_rewards_app.Models.Product;
 
-public class ClientService {
+public class ProductService {
     private Database db;
     
-    public ClientService() {
+    public ProductService() {
         db = new Database();
     }
 
-    public void createClient(String name, String surname, String phone, String email) {
+    public void createProduct(String name, String code, int quantity, int price) {
         //if (name.isEmpty()) { 
         String query = """
-            INSERT INTO clients (
+            INSERT INTO products (
                 name,
-                surname,
-                phone,
-                email,
+                code,
+                quantity,
+                price,
                 created_at
             ) VALUES (
                 ?,
@@ -39,9 +39,9 @@ public class ClientService {
         try {
             PreparedStatement ps = db.getConn().prepareStatement(query);
             ps.setString(1, name);
-            ps.setString(2, surname);
-            ps.setString(3, phone);
-            ps.setString(4, email);
+            ps.setString(2, code);
+            ps.setInt(3, quantity);
+            ps.setInt(4, price);
             ps.setLong(5, timestamp.getTime());
             ps.execute();
         } catch (SQLException err) {
@@ -49,23 +49,23 @@ public class ClientService {
         }
     }
 
-    public ArrayList<Client> listClients() {
-        String query = "SELECT * FROM clients";
+    public ArrayList<Product> listProducts() {
+        String query = "SELECT * FROM products";
         try {
             Statement st = db.getConn().createStatement();
             ResultSet rs = st.executeQuery(query);
-            ArrayList<Client> clients = new ArrayList<>();
+            ArrayList<Product> products = new ArrayList<>();
     
             while (rs.next()) {
                 String name = rs.getString("name");
-                String surname = rs.getString("surname");
-                String phone = rs.getString("phone");
-                String email = rs.getString("email");
-                Client client = new Client(name, surname, phone, email);
-                clients.add(client);
+                String code = rs.getString("code");
+                int quantity = rs.getInt("quantity");
+                int price = rs.getInt("price");
+                Product product = new Product (name, code, quantity, price);
+                products.add(product);
             }
             
-            return clients;
+            return products;
         } catch (SQLException err) {
             System.err.println(err);
             return null;

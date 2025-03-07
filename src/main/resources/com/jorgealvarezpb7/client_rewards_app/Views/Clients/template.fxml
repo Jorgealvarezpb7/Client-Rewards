@@ -17,7 +17,7 @@
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="50.0" styleClass="sidebar" stylesheets="@../stylesheet.css" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="-5.0" prefHeight="600.0" prefWidth="65.0" stylesheets="@../../Styles/stylesheet.css">
+            <VBox layoutX="-5.0" prefHeight="600.0" prefWidth="65.0" styleClass="sidebar" stylesheets="@../../Styles/stylesheet.css">
                <children>
                   <Button id="dashboard" mnemonicParsing="false" onAction="#goToDashboard" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
                      <VBox.margin>
@@ -72,7 +72,7 @@
    <center>
       <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" style="-fx-background-color: #f3f3f3;" stylesheets="@../../Styles/stylesheet.css" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="40.0" layoutY="1.0" prefHeight="500.0" prefWidth="884.0" styleClass="pane" stylesheets="@../stylesheet.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+            <VBox layoutX="40.0" layoutY="1.0" prefHeight="500.0" prefWidth="884.0" styleClass="pane" stylesheets="@../stylesheet.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="-3.0">
                <children>
                   <HBox>
                      <children>
@@ -108,10 +108,10 @@
                           <columns>
                             <TableColumn fx:id="nameColumn" prefWidth="133.0" text="Nombre" />
                             <TableColumn fx:id="surnameColumn" prefWidth="133.0" text="Apellidos" />
-                            <TableColumn prefWidth="133.0" text="Movil" />
-                            <TableColumn prefWidth="133.0" text="Correo" />
+                            <TableColumn fx:id="phoneColumn" prefWidth="133.0" text="Movil" />
+                            <TableColumn fx:id="emailColumn" prefWidth="133.0" text="Correo" />
                             <TableColumn prefWidth="133.0" text="Puntos" />
-                            <TableColumn prefWidth="133.0" text="F.Creacion" />
+                            <TableColumn fx:id="created_atColumn" prefWidth="133.0" text="F.Creacion" />
                           </columns>
                            <HBox.margin>
                               <Insets left="40.0" right="20.0" />
@@ -121,12 +121,12 @@
                   </HBox>
                   <HBox alignment="BOTTOM_RIGHT">
                      <children>
-                        <Button id="clientesInfo" onAction="#goToClientInfo" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css" text="Ver Cliente" HBox.hgrow="ALWAYS">
+                        <Button id="clientesInfo" mnemonicParsing="false" onAction="#goToClientInfo" prefHeight="26.0" prefWidth="107.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css" text="Ver Cliente" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets right="590.0" />
                            </HBox.margin>
                         </Button>
-                        <Button id="agregarCliente" onAction="#goToNewClientForm" layoutX="745.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css" text="Crear Cliente">
+                        <Button id="agregarCliente" layoutX="745.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToNewClientForm" prefHeight="26.0" prefWidth="107.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css" text="Crear Cliente">
                            <HBox.margin>
                               <Insets right="40.0" />
                            </HBox.margin>
