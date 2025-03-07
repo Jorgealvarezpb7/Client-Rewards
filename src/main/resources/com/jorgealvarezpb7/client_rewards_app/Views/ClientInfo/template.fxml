@@ -126,7 +126,7 @@
                               </Label>
                            </children>
                         </VBox>
-                        <AnchorPane minHeight="140.0" prefHeight="143.0" prefWidth="200.0" styleClass="colored_display">
+                        <AnchorPane minHeight="140.0" prefHeight="143.0" prefWidth="200.0" styleClass="colored_display1">
                            <children>
                               <Label text="Puntos acumulados:" textFill="WHITE">
                                  <padding>
@@ -146,7 +146,7 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="121.0" layoutY="10.0" prefHeight="130.0" prefWidth="200.0" styleClass="colored_display">
+                        <AnchorPane layoutX="121.0" layoutY="10.0" prefHeight="130.0" prefWidth="200.0" styleClass="colored_display2">
                            <children>
                               <Label text="Descuento aplicable:" textFill="WHITE">
                                  <padding>

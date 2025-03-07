@@ -10,15 +10,15 @@
    <children>
       <Pane layoutX="412.0" layoutY="173.0" prefHeight="307.0" prefWidth="200.0" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="412.0" AnchorPane.topAnchor="110.0">
          <children>
-            <TextField layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="178.0" />
+            <TextField fx:id="saleQuantityField" layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="178.0" promptText="Nro de articulos comprados" />
             <Label layoutX="11.0" layoutY="68.0" text="Cantidad" />
             <Label layoutX="10.0" layoutY="120.0" prefHeight="18.0" prefWidth="74.0" text="Cliente" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="241.0" minWidth="53.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="119.0" text="Registrar Venta" />
-            <TextField layoutX="10.0" layoutY="139.0" prefHeight="27.0" prefWidth="178.0" />
+            <TextField fx:id="saleClientField" layoutX="10.0" layoutY="139.0" prefHeight="27.0" prefWidth="178.0" promptText="Nombre del comprador"/>
             <Label layoutX="11.0" layoutY="14.0" text="Producto" />
-            <TextField layoutX="10.0" layoutY="32.0" prefHeight="26.0" prefWidth="178.0" />
+            <TextField fx:id="saleProductField" layoutX="10.0" layoutY="32.0" prefHeight="26.0" prefWidth="178.0" promptText="Nombre del producto"/>
             <Label layoutX="10.0" layoutY="174.0" prefHeight="18.0" prefWidth="74.0" text="Monto Total" />
-            <TextField layoutX="10.0" layoutY="193.0" prefHeight="27.0" prefWidth="178.0" />
+            <TextField fx:id="saleTotal_AmountField" layoutX="10.0" layoutY="193.0" prefHeight="27.0" prefWidth="178.0" promptText="Monto total de la venta"/>
+            <Button onAction="#handleCreateSale" alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="241.0" minWidth="53.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="119.0" text="Registrar Venta" />
          </children>
       </Pane>
    </children>

@@ -11,16 +11,16 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgealvarezpb7.client_rewards_app.Controllers.AuthController">
    <children>
-      <Pane layoutX="426.0" layoutY="168.0" prefHeight="269.0" prefWidth="177.0" AnchorPane.bottomAnchor="175.0" AnchorPane.topAnchor="110.0">
+      <Pane layoutX="426.0" layoutY="168.0" prefHeight="269.0" prefWidth="177.0" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="423.0" AnchorPane.rightAnchor="423.0" AnchorPane.topAnchor="110.0">
          <children>
             <TextField fx:id="usernameField" layoutX="8.0" layoutY="115.0" />
             <Label layoutX="11.0" layoutY="96.0" text="Usuario:" />
             <Label layoutX="11.0" layoutY="150.0" prefHeight="18.0" prefWidth="74.0" text="Contrasena:" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="214.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="31.0" prefWidth="53.0" text="Entrar" />
             <PasswordField fx:id="passwordField" layoutX="8.0" layoutY="170.0" />
-            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="56.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Images/concho.png" />
+                  <Image url="@../../Images/logoApp.png" />
                </image></ImageView>
          </children>
       </Pane>

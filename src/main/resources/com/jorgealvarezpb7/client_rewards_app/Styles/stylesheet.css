@@ -14,14 +14,25 @@
 
 .pane{
   -fx-background-color:#FFFFFF;
-  -fx-border-color:#1A3384;
+  -fx-border-color:#24e0a8;
   -fx-border-width:3px;
   -fx-background-radius:0px 0px 30px 30px;
   -fx-border-radius:0px 0px 30px 30px;
 }
 
 .colored_display{
-  -fx-background-color:linear-gradient(to right, #1A3384, #2B49B3);
+  -fx-background-color:linear-gradient(to right, #24f0e8, #3a685e);
+  -fx-background-radius:10px;
+}
+
+.colored_display1{
+  -fx-background-color:linear-gradient(to right, #24e088, #5f9287);
+  -fx-background-radius:10px;
+}
+
+.colored_display2{
+  -fx-background-color:linear-gradient(to right, #24c4e0, #528177);
+
   -fx-background-radius:10px;
 }
 
@@ -33,7 +44,7 @@
 }
 
 .button_sb:hover{
-  -fx-background-color:#abd0f5;
+  -fx-background-color:#66d6b5;
   -fx-background-radius:5px;
   -fx-text-fill:#FFFFFF;
 }

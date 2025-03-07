@@ -104,14 +104,14 @@
                         <Insets bottom="30.0" top="25.0" />
                      </VBox.margin>
                      <children>
-                        <TableView prefHeight="340.0" prefWidth="800.0">
+                        <TableView fx:id="salesTable" prefHeight="340.0" prefWidth="800.0">
                           <columns>
-                            <TableColumn prefWidth="133.0" text="Producto" />
-                            <TableColumn prefWidth="133.0" text="Codigo" />
-                              <TableColumn prefWidth="133.0" text="Cantidad" />
-                              <TableColumn prefWidth="133.0" text="Precio" />
-                              <TableColumn prefWidth="133.0" text="Puntos" />
-                              <TableColumn prefWidth="133.0" text="F.Creacion" />
+                            <TableColumn fx:id="productColumn" prefWidth="133.0" text="Producto" />
+                            <TableColumn fx:id="quantityColumn" prefWidth="133.0" text="Cantidad" />
+                            <TableColumn fx:id="clientColumn" prefWidth="133.0" text="Cliente" />
+                            <TableColumn fx:id="total_AmountColumn" prefWidth="133.0" text="Monto Total" />
+                            <TableColumn prefWidth="133.0" text="Puntos" />
+                            <TableColumn fx:id="created_atColumn" prefWidth="133.0" text="F.Creacion" />
                           </columns>
                            <HBox.margin>
                               <Insets left="40.0" right="20.0" />

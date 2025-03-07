@@ -11,12 +11,14 @@ public class Authenticated {
     protected Database db;
     public ClientService clientService;
     public ProductService productService;
+    public SaleService saleService;
 
     public Authenticated() {
         db = new Database();
         db.runMigrations();
         clientService = new ClientService();
         productService = new ProductService();
+        saleService = new SaleService();
     }
 
     @FXML

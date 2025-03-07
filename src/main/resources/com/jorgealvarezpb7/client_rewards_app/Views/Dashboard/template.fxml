@@ -145,7 +145,7 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="121.0" layoutY="10.0" prefHeight="130.0" prefWidth="200.0" styleClass="colored_display">
+                        <AnchorPane layoutX="121.0" layoutY="10.0" prefHeight="130.0" prefWidth="200.0" styleClass="colored_display2">
                            <children>
                               <Label text="Numero de ventas:" textFill="WHITE">
                                  <padding>
@@ -174,7 +174,7 @@
                               <Insets left="25.0" />
                            </HBox.margin>
                         </AnchorPane>
-                        <AnchorPane layoutX="321.0" layoutY="10.0" prefHeight="130.0" prefWidth="200.0" styleClass="colored_display">
+                        <AnchorPane layoutX="321.0" layoutY="10.0" prefHeight="130.0" prefWidth="200.0" styleClass="colored_display1">
                            <children>
                               <Label text="Ticket Medio:" textFill="WHITE">
                                  <padding>
