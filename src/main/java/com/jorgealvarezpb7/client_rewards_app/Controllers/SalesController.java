@@ -17,10 +17,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SalesController extends Authenticated implements Initializable{
     @FXML private TableView<Sale> salesTable;
-    @FXML private TableColumn<Sale, String> productColumn;
+    @FXML private TableColumn<Sale, String> productIdColumn;
     @FXML private TableColumn<Sale, Integer> quantityColumn;
-    @FXML private TableColumn<Sale, String> clientColumn;
-    @FXML private TableColumn<Sale, Integer> total_AmountColumn;
+    @FXML private TableColumn<Sale, String> clientIdColumn;
+    @FXML private TableColumn<Sale, Double> totalAmountColumn;
     @FXML private TableColumn<Sale, Integer> created_atColumn;
 
     @Override
@@ -28,10 +28,10 @@ public class SalesController extends Authenticated implements Initializable{
         ArrayList<Sale> sales = this.saleService.listSales();
         ObservableList<Sale> salesObs = FXCollections.observableArrayList(sales);
 
-        productColumn.setCellValueFactory(new PropertyValueFactory<Sale, String>("product"));
+        productIdColumn.setCellValueFactory(new PropertyValueFactory<Sale, String>("productId"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Sale, Integer>("quantity"));
-        clientColumn.setCellValueFactory(new PropertyValueFactory<Sale, String>("client"));
-        total_AmountColumn.setCellValueFactory(new PropertyValueFactory<Sale, Integer>("total_Amount"));
+        clientIdColumn.setCellValueFactory(new PropertyValueFactory<Sale, String>("clientId"));
+        totalAmountColumn.setCellValueFactory(new PropertyValueFactory<Sale, Double>("totalAmount"));
         created_atColumn.setCellValueFactory(new PropertyValueFactory<Sale, Integer>("created_at"));
         salesTable.setItems(salesObs);
     }

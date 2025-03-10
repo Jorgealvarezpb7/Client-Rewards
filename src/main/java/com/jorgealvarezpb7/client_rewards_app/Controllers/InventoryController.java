@@ -18,9 +18,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class InventoryController extends Authenticated implements Initializable{
     @FXML private TableView<Product> productsTable;
     @FXML private TableColumn<Product, String> nameColumn;
-    @FXML private TableColumn<Product, String> codeColumn;
+    @FXML private TableColumn<Product, String> idColumn;
     @FXML private TableColumn<Product, Integer> quantityColumn;
-    @FXML private TableColumn<Product, Integer> priceColumn;
+    @FXML private TableColumn<Product, Double> priceColumn;
     @FXML private TableColumn<Product, Integer> created_atColumn;
 
     @Override
@@ -29,9 +29,9 @@ public class InventoryController extends Authenticated implements Initializable{
         ObservableList<Product> productsObs = FXCollections.observableArrayList(products);
 
         nameColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("name"));
-        codeColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("code"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("Id"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("quantity"));
-        priceColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("price"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
         created_atColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("created_at"));
         productsTable.setItems(productsObs);
     }

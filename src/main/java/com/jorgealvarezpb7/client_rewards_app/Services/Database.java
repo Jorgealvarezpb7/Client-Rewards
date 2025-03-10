@@ -20,8 +20,8 @@ public class Database {
         try {
             Statement st = conn.createStatement();
             st.execute("CREATE TABLE IF NOT EXISTS clients (name TEXT, surname TEXT, phone TEXT, email TEXT, created_at INTEGER)");
-            st.execute("CREATE TABLE IF NOT EXISTS products (name TEXT, code TEXT, quantity INTEGER, price INTEGER, created_at INTEGER)");
-            st.execute("CREATE TABLE IF NOT EXISTS sales (product TEXT, quantity INTEGER, client TEXT, total_Amount INTEGER, created_at INTEGER)");
+            st.execute("CREATE TABLE IF NOT EXISTS products (name TEXT, id TEXT, quantity INTEGER, price REAL, created_at INTEGER)");
+            st.execute("CREATE TABLE IF NOT EXISTS sales (productId TEXT, quantity INTEGER, clientId TEXT, totalAmount REAL, created_at INTEGER)");
         
         } catch (SQLException err) {
             System.err.println(err.toString());

@@ -16,12 +16,12 @@ public class ProductService {
         db = new Database();
     }
 
-    public void createProduct(String name, String code, int quantity, int price) {
+    public void createProduct(String name, String id, int quantity, Double price) {
         //if (name.isEmpty()) { 
         String query = """
             INSERT INTO products (
                 name,
-                code,
+                id,
                 quantity,
                 price,
                 created_at
@@ -39,9 +39,9 @@ public class ProductService {
         try {
             PreparedStatement ps = db.getConn().prepareStatement(query);
             ps.setString(1, name);
-            ps.setString(2, code);
+            ps.setString(2, id);
             ps.setInt(3, quantity);
-            ps.setInt(4, price);
+            ps.setDouble(4, price);
             ps.setLong(5, timestamp.getTime());
             ps.execute();
         } catch (SQLException err) {
@@ -58,10 +58,10 @@ public class ProductService {
     
             while (rs.next()) {
                 String name = rs.getString("name");
-                String code = rs.getString("code");
+                String id = rs.getString("id");
                 int quantity = rs.getInt("quantity");
-                int price = rs.getInt("price");
-                Product product = new Product (name, code, quantity, price);
+                Double price = rs.getDouble("price");
+                Product product = new Product (name, id, quantity, price);
                 products.add(product);
             }
             

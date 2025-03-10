@@ -106,10 +106,10 @@
                      <children>
                         <TableView fx:id="salesTable" prefHeight="340.0" prefWidth="800.0">
                           <columns>
-                            <TableColumn fx:id="productColumn" prefWidth="133.0" text="Producto" />
+                            <TableColumn fx:id="productIdColumn" prefWidth="133.0" text="Id Producto" />
                             <TableColumn fx:id="quantityColumn" prefWidth="133.0" text="Cantidad" />
-                            <TableColumn fx:id="clientColumn" prefWidth="133.0" text="Cliente" />
-                            <TableColumn fx:id="total_AmountColumn" prefWidth="133.0" text="Monto Total" />
+                            <TableColumn fx:id="clientIdColumn" prefWidth="133.0" text="Id Cliente" />
+                            <TableColumn fx:id="totalAmountColumn" prefWidth="133.0" text="Monto Total" />
                             <TableColumn prefWidth="133.0" text="Puntos" />
                             <TableColumn fx:id="created_atColumn" prefWidth="133.0" text="F.Creacion" />
                           </columns>

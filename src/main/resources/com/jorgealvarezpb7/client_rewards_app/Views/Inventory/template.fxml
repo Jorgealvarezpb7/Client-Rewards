@@ -112,7 +112,7 @@
                         <TableView fx:id="productsTable" prefHeight="340.0" prefWidth="800.0">
                           <columns>
                             <TableColumn fx:id="nameColumn" prefWidth="133.0" text="Producto" />
-                            <TableColumn fx:id="codeColumn" prefWidth="133.0" text="Codigo" />
+                            <TableColumn fx:id="idColumn" prefWidth="133.0" text="Id" />
                             <TableColumn fx:id="quantityColumn" prefWidth="133.0" text="Cantidad" />
                             <TableColumn fx:id="priceColumn" prefWidth="133.0" text="Precio" />
                             <TableColumn prefWidth="133.0" text="Puntos" />

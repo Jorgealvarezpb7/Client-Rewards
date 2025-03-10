@@ -16,14 +16,14 @@ public class SaleService {
         db = new Database();
     }
 
-    public void createSale(String product, int quantity, String client, int totalAmount) {
+    public void createSale(String productId, int quantity, String clientId, Double totalAmount) {
         //if (name.isEmpty()) { 
         String query = """
             INSERT INTO sales (
-                product,
+                productId,
                 quantity,
-                client,
-                total_Amount,
+                clientId,
+                totalAmount,
                 created_at
             ) VALUES (
                 ?,
@@ -38,10 +38,10 @@ public class SaleService {
 
         try {
             PreparedStatement ps = db.getConn().prepareStatement(query);
-            ps.setString(1, product);
+            ps.setString(1, productId);
             ps.setInt(2, quantity);
-            ps.setString(3, client);
-            ps.setInt(4, totalAmount);
+            ps.setString(3, clientId);
+            ps.setDouble(4, totalAmount);
             ps.setLong(5, timestamp.getTime());
             ps.execute();
         } catch (SQLException err) {
@@ -57,11 +57,11 @@ public class SaleService {
             ArrayList<Sale> sales = new ArrayList<>();
     
             while (rs.next()) {
-                String product = rs.getString("product");
+                String productId = rs.getString("productId");
                 int quantity = rs.getInt("quantity");
-                String client = rs.getString("client");
-                int total_Amount = rs.getInt("total_Amount");
-                Sale sale = new Sale (product, quantity, client, total_Amount);
+                String clientId = rs.getString("clientId");
+                Double totalAmount = rs.getDouble("totalAmount");
+                Sale sale = new Sale (productId, quantity, clientId, totalAmount);
                 sales.add(sale);
             }
             

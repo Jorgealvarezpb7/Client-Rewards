@@ -1,24 +1,24 @@
 package com.jorgealvarezpb7.client_rewards_app.Models;
 
 public class Sale {
-    private String product;
+    private String productId;
     private int quantity;
-    private String client;
-    private int total_Amount;
+    private String clientId;
+    private Double totalAmount;
 
-    public Sale (String product, int quantity, String client, int total_Amount) { 
-        this.product = product;
+    public Sale (String productId, int quantity, String clientId, Double totalAmount) { 
+        this.productId = productId;
         this.quantity = quantity;
-        this.client = client;
-        this.total_Amount = total_Amount;
+        this.clientId = clientId;
+        this.totalAmount = totalAmount;
     }
     
-    public void setProduct(String product) {
-        this.product = product;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
-    public String getProduct() {
-        return product;
+    public String getProductId() {
+        return productId;
     }
 
     public void setQuantity(int quantity) {
@@ -29,19 +29,19 @@ public class Sale {
         return quantity;
     }
 
-    public void setClient(String client) {
-        this.client = client;
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
     }
 
-    public String getClient() {
-        return client;
+    public String getClientId() {
+        return clientId;
     }
 
-    public void setTotal_Amount(int total_Amount) {
-        this.total_Amount = total_Amount;
+    public void setTotalAmount(Double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
-    public int getTotal_Amount() {
-        return total_Amount;
+    public Double getTotalAmount() {
+        return totalAmount;
     }
 }

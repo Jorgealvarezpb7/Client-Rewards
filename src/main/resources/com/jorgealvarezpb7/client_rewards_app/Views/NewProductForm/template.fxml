@@ -1,25 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgealvarezpb7.client_rewards_app.Controllers.NewProductFormController">
    <children>
       <Pane layoutX="412.0" layoutY="160.0" prefHeight="302.0" prefWidth="200.0" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="412.0" AnchorPane.topAnchor="110.0">
          <children>
-            <TextField fx:id="productCodeField" layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="178.0" promptText="Codigo del producto" />
-            <Label layoutX="11.0" layoutY="68.0" text="Codigo" />
+            <TextField fx:id="productIdField" layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="178.0" promptText="Id del producto" />
+            <Label layoutX="11.0" layoutY="68.0" text="Id" />
             <Label layoutX="10.0" layoutY="120.0" prefHeight="18.0" prefWidth="74.0" text="Cantidad" />
             <TextField fx:id="productQuantityField" layoutX="10.0" layoutY="139.0" prefHeight="27.0" prefWidth="178.0" promptText="Cantidad del producto" />
             <Label layoutX="11.0" layoutY="14.0" text="Producto" />
             <TextField fx:id="productNameField" layoutX="10.0" layoutY="32.0" prefHeight="26.0" prefWidth="178.0" promptText="Nombre del producto" />
             <Label layoutX="10.0" layoutY="174.0" prefHeight="18.0" prefWidth="74.0" text="Precio" />
             <TextField fx:id="productPriceField" layoutX="10.0" layoutY="193.0" prefHeight="27.0" prefWidth="178.0" promptText="Precio del producto" />
-            <Button onAction="#handleCreateProduct" alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="241.0" minWidth="53.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="119.0" text="Agregar Producto" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="241.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateProduct" prefHeight="31.0" prefWidth="119.0" text="Agregar Producto" />
          </children>
       </Pane>
+      <VBox prefHeight="600.0" prefWidth="65.0" styleClass="sidebar" stylesheets="@../../Styles/stylesheet.css">
+         <children>
+            <Button id="dashboard" mnemonicParsing="false" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
+               <VBox.margin>
+                  <Insets left="8.0" top="10.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView glyphName="DASHBOARD" size="20" />
+               </graphic>
+            </Button>
+            <Button id="clientes" mnemonicParsing="false" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
+               <VBox.margin>
+                  <Insets left="8.0" top="20.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView glyphName="USERS" size="20" />
+               </graphic>
+            </Button>
+            <Button id="inventario" mnemonicParsing="false" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
+               <VBox.margin>
+                  <Insets left="8.0" top="20.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView glyphName="CUBES" size="20" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
+               <VBox.margin>
+                  <Insets left="8.0" top="20.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView id="ventas" glyphName="DOLLAR" size="20" />
+               </graphic>
+            </Button>
+            <Separator maxWidth="50.0" minWidth="50.0" prefWidth="50.0">
+               <VBox.margin>
+                  <Insets left="10.0" top="350.0" />
+               </VBox.margin>
+            </Separator>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="8.0" top="10.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView id="logout" glyphName="" size="20" />
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

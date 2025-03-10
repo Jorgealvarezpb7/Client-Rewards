@@ -2,13 +2,13 @@ package com.jorgealvarezpb7.client_rewards_app.Models;
 
 public class Product {
     private String name;
-    private String code;
+    private String id;
     private int quantity;
-    private int price;
+    private Double price;
 
-    public Product(String name, String code, int quantity, int price) { 
+    public Product(String name, String id, int quantity, Double price) { 
         this.name = name;
-        this.code = code;
+        this.id = id;
         this.quantity = quantity;
         this.price = price;
     }
@@ -21,12 +21,12 @@ public class Product {
         return name;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getCode() {
-        return code;
+    public String getId() {
+        return id;
     }
 
     public void setQuantity(int quantity) {
@@ -37,11 +37,11 @@ public class Product {
         return quantity;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getPrice() {
+    public Double getPrice() {
         return price;
     }
 }
