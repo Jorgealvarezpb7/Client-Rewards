@@ -23,6 +23,6 @@ public class NewProductFormController extends Authenticated{
         String productPrice = productPriceField.getText();
         Double productPriceDouble = Double.parseDouble(productPrice);
         this.productService.createProduct(productName, productId, productQuantityInt, productPriceDouble);
-        App.setRoot("Views/Inventory/template");
+        this.goToInventory(event);
     }
 }

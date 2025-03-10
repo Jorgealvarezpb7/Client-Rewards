@@ -1,0 +1,1 @@
+https://bitbucket.org/Jerady/fontawesomefx/src/master/fontawesomefx/fontawesomefx-fontawesome/src/main/java/de/jensd/fx/glyphs/fontawesome/FontAwesomeIcon.java
