@@ -12,6 +12,7 @@ public class Authenticated {
     public ClientService clientService;
     public ProductService productService;
     public SaleService saleService;
+    //public User currentUser;
 
     public Authenticated() {
         db = new Database();
@@ -19,6 +20,7 @@ public class Authenticated {
         clientService = new ClientService();
         productService = new ProductService();
         saleService = new SaleService();
+        //currentUser = new CurrentUser();
     }
 
     @FXML

@@ -20,6 +20,14 @@
   -fx-border-radius:0px 0px 30px 30px;
 }
 
+.pane2{
+  -fx-background-color:#FFFFFF;
+  -fx-border-color:#24e0a8;
+  -fx-border-width:3px;
+  -fx-background-radius:30px 30px 30px 30px;
+  -fx-border-radius:30px 30px 30px 30px;
+}
+
 .colored_display{
   -fx-background-color:linear-gradient(to right, #24f0e8, #3a685e);
   -fx-background-radius:10px;
@@ -43,7 +51,20 @@
   -fx-border-color:#FFFFFF;
 }
 
+.button_sb2{
+  -fx-background-color:trasparent;
+  -fx-background-radius:5px;
+  -fx-border-radius:5px;
+  -fx-border-color:#C1C1C1;
+}
+
 .button_sb:hover{
+  -fx-background-color:#66d6b5;
+  -fx-background-radius:5px;
+  -fx-text-fill:#FFFFFF;
+}
+
+.button_sb2:hover{
   -fx-background-color:#66d6b5;
   -fx-background-radius:5px;
   -fx-text-fill:#FFFFFF;

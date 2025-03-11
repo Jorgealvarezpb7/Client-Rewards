@@ -23,6 +23,6 @@ public class NewSaleFormController extends Authenticated{
         String saleTotalAmount = saleTotalAmountField.getText();
         Double saleTotalAmountDouble = Double.parseDouble(saleTotalAmount);
         this.saleService.createSale(saleProductId, saleQuantityInt, saleClientId, saleTotalAmountDouble);
-        App.setRoot("Views/Sales/template");
+        this.goToSales(event);
     }
 }

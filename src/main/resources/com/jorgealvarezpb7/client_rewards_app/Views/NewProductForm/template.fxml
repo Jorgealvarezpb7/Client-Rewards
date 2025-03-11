@@ -25,7 +25,7 @@
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="241.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateProduct" prefHeight="31.0" prefWidth="119.0" text="Agregar Producto" />
          </children>
       </Pane>
-      <VBox prefHeight="600.0" prefWidth="65.0" styleClass="sidebar" stylesheets="@../../Styles/stylesheet.css">
+      <VBox layoutX="-5.0" prefHeight="600.0" prefWidth="65.0" styleClass="sidebar" stylesheets="@../../Styles/stylesheet.css">
          <children>
             <Button id="dashboard" mnemonicParsing="false" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
                <VBox.margin>
@@ -56,7 +56,7 @@
                   <Insets left="8.0" top="20.0" />
                </VBox.margin>
                <graphic>
-                  <FontAwesomeIconView id="ventas" glyphName="EURO" size="20" styleClass="sidebar_opt" />
+                  <FontAwesomeIconView id="ventas" glyphName="CREDIT_CARD" size="20" styleClass="sidebar_opt" />
                </graphic>
             </Button>
             <Separator maxWidth="50.0" minWidth="50.0" prefWidth="50.0">
@@ -64,12 +64,12 @@
                   <Insets left="10.0" top="350.0" />
                </VBox.margin>
             </Separator>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
+            <Button mnemonicParsing="false" onAction="#goToInventory" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
                <VBox.margin>
                   <Insets bottom="10.0" left="8.0" top="10.0" />
                </VBox.margin>
                <graphic>
-                  <FontAwesomeIconView id="previousView" onAction="#goToInventory" glyphName="ARROW_CIRCLE_LEFT" size="23" styleClass="button_sb" />
+                  <FontAwesomeIconView id="previousView" glyphName="ARROW_CIRCLE_LEFT" size="23" styleClass="button_sb" />
                </graphic>
             </Button>
          </children>

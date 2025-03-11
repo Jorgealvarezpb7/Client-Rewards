@@ -21,6 +21,6 @@ public class NewClientFormController extends Authenticated {
         String clientPhone = clientPhoneField.getText();
         String clientEmail = clientEmailField.getText();
         this.clientService.createClient(clientName, clientSurname, clientPhone, clientEmail);
-        App.setRoot("Views/Clients/template");
+        this.goToClients(event);
     }
 }

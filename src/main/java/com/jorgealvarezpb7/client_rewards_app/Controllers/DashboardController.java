@@ -12,11 +12,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class DashboardController extends Authenticated {
-    @FXML private TextField usernameField;
+    @FXML private TextField userNameField;
     @FXML private PasswordField passwordField;
     
     @FXML protected void handleSubmitButtonAction(ActionEvent event) throws IOException {
-        String username = usernameField.getText();
+        String userName = userNameField.getText();
         String password = passwordField.getText();
 
         App.setRoot("Views/Dashboard/template");
