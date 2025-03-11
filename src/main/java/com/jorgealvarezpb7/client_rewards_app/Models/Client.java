@@ -3,12 +3,14 @@ package com.jorgealvarezpb7.client_rewards_app.Models;
 public class Client {
     private String name;
     private String surname;
+    private String surname2;
     private String phone;
     private String email;
 
-    public Client(String name, String surname, String phone, String email) { 
+    public Client(String name, String surname, String surname2, String phone, String email) { 
         this.name = name;
         this.surname = surname;
+        this.surname2 = surname2;
         this.phone = phone;
         this.email = email;
     }
@@ -27,6 +29,14 @@ public class Client {
 
     public String getSurname() {
         return surname;
+    }
+
+    public void setSurname2(String surname2) {
+        this.surname2 = surname2;
+    }
+
+    public String getSurname2() {
+        return surname2;
     }
 
     public void setPhone(String phone) {

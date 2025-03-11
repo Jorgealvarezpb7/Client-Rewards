@@ -16,16 +16,18 @@ public class ClientService {
         db = new Database();
     }
 
-    public void createClient(String name, String surname, String phone, String email) {
+    public void createClient(String name, String surname,  String surname2, String phone, String email) {
         //if (name.isEmpty()) { 
         String query = """
             INSERT INTO clients (
                 name,
                 surname,
+                surname2,
                 phone,
                 email,
                 created_at
             ) VALUES (
+                ?,
                 ?,
                 ?,
                 ?,
@@ -40,9 +42,10 @@ public class ClientService {
             PreparedStatement ps = db.getConn().prepareStatement(query);
             ps.setString(1, name);
             ps.setString(2, surname);
-            ps.setString(3, phone);
-            ps.setString(4, email);
-            ps.setLong(5, timestamp.getTime());
+            ps.setString(3, surname2);
+            ps.setString(4, phone);
+            ps.setString(5, email);
+            ps.setLong(6, timestamp.getTime());
             ps.execute();
         } catch (SQLException err) {
             System.err.println(err);
@@ -59,9 +62,10 @@ public class ClientService {
             while (rs.next()) {
                 String name = rs.getString("name");
                 String surname = rs.getString("surname");
+                String surname2 = rs.getString("surname2");
                 String phone = rs.getString("phone");
                 String email = rs.getString("email");
-                Client client = new Client(name, surname, phone, email);
+                Client client = new Client(name, surname, surname2, phone, email);
                 clients.add(client);
             }
             

@@ -12,15 +12,17 @@ import javafx.scene.control.TextField;
 public class NewClientFormController extends Authenticated {
     @FXML private TextField clientNameField;
     @FXML private TextField clientSurnameField;
+    @FXML private TextField clientSurname2Field;
     @FXML private TextField clientPhoneField;
     @FXML private TextField clientEmailField;
 
     @FXML protected void handleCreateClient(ActionEvent event) throws IOException {
         String clientName = clientNameField.getText();
         String clientSurname = clientSurnameField.getText();
+        String clientSurname2 = clientSurname2Field.getText();
         String clientPhone = clientPhoneField.getText();
         String clientEmail = clientEmailField.getText();
-        this.clientService.createClient(clientName, clientSurname, clientPhone, clientEmail);
+        this.clientService.createClient(clientName, clientSurname, clientSurname2, clientPhone, clientEmail);
         this.goToClients(event);
     }
 }

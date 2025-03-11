@@ -107,7 +107,8 @@
                         <TableView fx:id="clientsTable" prefHeight="340.0" prefWidth="800.0">
                           <columns>
                             <TableColumn fx:id="nameColumn" prefWidth="133.0" text="Nombre" />
-                            <TableColumn fx:id="surnameColumn" prefWidth="133.0" text="Apellidos" />
+                            <TableColumn fx:id="surnameColumn" prefWidth="133.0" text="Apellido" />
+                            <TableColumn fx:id="surname2Column" prefWidth="133.0" text="2do Apellido" />
                             <TableColumn fx:id="phoneColumn" prefWidth="133.0" text="Movil" />
                             <TableColumn fx:id="emailColumn" prefWidth="133.0" text="Correo" />
                             <TableColumn prefWidth="133.0" text="Puntos" />
