@@ -22,7 +22,7 @@ public class ClientsController extends Authenticated implements Initializable{
     @FXML private TableColumn<Client, String> surname2Column;
     @FXML private TableColumn<Client, String> phoneColumn;
     @FXML private TableColumn<Client, String> emailColumn;
-    @FXML private TableColumn<Client, Integer> created_atColumn;
+    @FXML private TableColumn<Client, Integer> createdAtColumn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -34,7 +34,7 @@ public class ClientsController extends Authenticated implements Initializable{
         surname2Column.setCellValueFactory(new PropertyValueFactory<Client, String>("surname2"));
         phoneColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("phone"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<Client, String>("email"));
-        created_atColumn.setCellValueFactory(new PropertyValueFactory<Client, Integer>("created_at"));
+        createdAtColumn.setCellValueFactory(new PropertyValueFactory<Client, Integer>("createdAt"));
         clientsTable.setItems(clientsObs);
     }
 }

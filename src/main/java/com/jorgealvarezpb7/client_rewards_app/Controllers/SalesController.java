@@ -21,7 +21,7 @@ public class SalesController extends Authenticated implements Initializable{
     @FXML private TableColumn<Sale, Integer> quantityColumn;
     @FXML private TableColumn<Sale, String> clientIdColumn;
     @FXML private TableColumn<Sale, Double> totalAmountColumn;
-    @FXML private TableColumn<Sale, Integer> created_atColumn;
+    @FXML private TableColumn<Sale, Integer> createdAtColumn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -32,7 +32,7 @@ public class SalesController extends Authenticated implements Initializable{
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Sale, Integer>("quantity"));
         clientIdColumn.setCellValueFactory(new PropertyValueFactory<Sale, String>("clientId"));
         totalAmountColumn.setCellValueFactory(new PropertyValueFactory<Sale, Double>("totalAmount"));
-        created_atColumn.setCellValueFactory(new PropertyValueFactory<Sale, Integer>("created_at"));
+        createdAtColumn.setCellValueFactory(new PropertyValueFactory<Sale, Integer>("createdAt"));
         salesTable.setItems(salesObs);
     }
 }

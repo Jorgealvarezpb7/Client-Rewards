@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 
 import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 
@@ -25,7 +26,7 @@ public class ClientService {
                 surname2,
                 phone,
                 email,
-                created_at
+                createdAt
             ) VALUES (
                 ?,
                 ?,
@@ -65,7 +66,9 @@ public class ClientService {
                 String surname2 = rs.getString("surname2");
                 String phone = rs.getString("phone");
                 String email = rs.getString("email");
-                Client client = new Client(name, surname, surname2, phone, email);
+                Long createdAt = rs.getLong("createdAt");
+                Date date = new Date(createdAt);
+                Client client = new Client(name, surname, surname2, phone, email, date);
                 clients.add(client);
             }
             

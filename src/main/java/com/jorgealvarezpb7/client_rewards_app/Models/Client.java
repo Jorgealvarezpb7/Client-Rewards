@@ -1,18 +1,22 @@
 package com.jorgealvarezpb7.client_rewards_app.Models;
 
+import java.util.Date;
+
 public class Client {
     private String name;
     private String surname;
     private String surname2;
     private String phone;
     private String email;
+    private Date createdAt;
 
-    public Client(String name, String surname, String surname2, String phone, String email) { 
+    public Client(String name, String surname, String surname2, String phone, String email, Date createdAt) { 
         this.name = name;
         this.surname = surname;
         this.surname2 = surname2;
         this.phone = phone;
         this.email = email;
+        this.createdAt = createdAt;
     }
     
     public void setName(String name) {
@@ -53,5 +57,13 @@ public class Client {
 
     public String getEmail() {
         return email;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
     }
 }

@@ -21,7 +21,7 @@ public class InventoryController extends Authenticated implements Initializable{
     @FXML private TableColumn<Product, String> idColumn;
     @FXML private TableColumn<Product, Integer> quantityColumn;
     @FXML private TableColumn<Product, Double> priceColumn;
-    @FXML private TableColumn<Product, Integer> created_atColumn;
+    @FXML private TableColumn<Product, Integer> createdAtColumn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -32,7 +32,7 @@ public class InventoryController extends Authenticated implements Initializable{
         idColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("Id"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("quantity"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
-        created_atColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("created_at"));
+        createdAtColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("createdAt"));
         productsTable.setItems(productsObs);
     }
 }

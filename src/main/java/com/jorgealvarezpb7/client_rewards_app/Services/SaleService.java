@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 
 import com.jorgealvarezpb7.client_rewards_app.Models.Sale;
 
@@ -24,7 +25,7 @@ public class SaleService {
                 quantity,
                 clientId,
                 totalAmount,
-                created_at
+                createdAt
             ) VALUES (
                 ?,
                 ?,
@@ -61,7 +62,9 @@ public class SaleService {
                 int quantity = rs.getInt("quantity");
                 String clientId = rs.getString("clientId");
                 Double totalAmount = rs.getDouble("totalAmount");
-                Sale sale = new Sale (productId, quantity, clientId, totalAmount);
+                Long createdAt = rs.getLong("createdAt");
+                Date date = new Date(createdAt);
+                Sale sale = new Sale (productId, quantity, clientId, totalAmount, date);
                 sales.add(sale);
             }
             

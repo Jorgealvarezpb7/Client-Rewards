@@ -1,16 +1,21 @@
 package com.jorgealvarezpb7.client_rewards_app.Models;
 
+import java.util.Date;
+
 public class Sale {
     private String productId;
     private int quantity;
     private String clientId;
     private Double totalAmount;
+    private Date createdAt;
 
-    public Sale (String productId, int quantity, String clientId, Double totalAmount) { 
+
+    public Sale (String productId, int quantity, String clientId, Double totalAmount, Date createdAt) { 
         this.productId = productId;
         this.quantity = quantity;
         this.clientId = clientId;
         this.totalAmount = totalAmount;
+        this.createdAt = createdAt;
     }
     
     public void setProductId(String productId) {
@@ -43,5 +48,13 @@ public class Sale {
 
     public Double getTotalAmount() {
         return totalAmount;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
     }
 }

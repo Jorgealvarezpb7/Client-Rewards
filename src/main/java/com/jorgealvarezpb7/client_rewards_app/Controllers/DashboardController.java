@@ -15,6 +15,12 @@ public class DashboardController extends Authenticated {
     @FXML private TextField userNameField;
     @FXML private PasswordField passwordField;
     
+    public DashboardController (){
+        //super();
+        //super.dateNow();
+        //super.timeNow();
+    }
+
     @FXML protected void handleSubmitButtonAction(ActionEvent event) throws IOException {
         String userName = userNameField.getText();
         String password = passwordField.getText();
