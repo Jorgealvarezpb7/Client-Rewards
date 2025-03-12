@@ -12,19 +12,59 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgealvarezpb7.client_rewards_app.Controllers.NewClientFormController">
    <children>
-      <Pane layoutX="412.0" layoutY="90.0" prefHeight="366.0" prefWidth="200.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="412.0" AnchorPane.topAnchor="90.0">
+      <Pane layoutX="291.0" layoutY="90.0" prefHeight="399.0" prefWidth="324.0" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="90.0">
          <children>
-            <TextField fx:id="clientPhoneField" layoutX="10.0" layoutY="195.0" prefHeight="27.0" prefWidth="178.0" promptText="Movil del Cliente" />
-            <Label layoutX="10.0" layoutY="14.0" text="Nombre" />
-            <TextField fx:id="clientSurnameField" layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="178.0" promptText="Apellido del Cliente" />
-            <Label layoutX="10.0" layoutY="68.0" text="Apellido" />
-            <Label layoutX="10.0" layoutY="176.0" prefHeight="18.0" prefWidth="74.0" text="Movil" />
-            <TextField fx:id="clientNameField" layoutX="10.0" layoutY="32.0" prefHeight="26.0" prefWidth="178.0" promptText="Nombre del Cliente" />
-            <Label layoutX="10.0" layoutY="231.0" prefHeight="18.0" prefWidth="74.0" text="Correo" />
-            <TextField fx:id="clientEmailField" layoutX="10.0" layoutY="250.0" prefHeight="27.0" prefWidth="178.0" promptText="Correo del Cliente" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="300.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateClient" prefHeight="31.0" prefWidth="90.0" text="Crear Cliente" />
-            <TextField fx:id="clientSurname2Field" layoutX="10.0" layoutY="140.0" prefHeight="26.0" prefWidth="178.0" promptText="2do Apellido del Cliente" />
-            <Label layoutX="10.0" layoutY="122.0" text="2do Apellido" />
+            <TextField fx:id="clientPhoneField" layoutX="100.0" layoutY="199.0" prefHeight="27.0" prefWidth="178.0" promptText="Movil del Cliente" />
+            <Label layoutX="10.0" layoutY="35.0" text="Nombre">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <TextField fx:id="clientSurnameField" layoutX="100.0" layoutY="86.0" prefHeight="26.0" prefWidth="178.0" promptText="Apellido del Cliente" />
+            <Label layoutX="10.0" layoutY="91.0" text="Apellido">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <Label layoutX="10.0" layoutY="204.0" prefHeight="18.0" prefWidth="74.0" text="Movil">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <TextField fx:id="clientNameField" layoutX="100.0" layoutY="30.0" prefHeight="26.0" prefWidth="178.0" promptText="Nombre del Cliente" />
+            <Label layoutX="10.0" layoutY="261.0" prefHeight="18.0" prefWidth="74.0" text="Correo">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <TextField fx:id="clientEmailField" layoutX="100.0" layoutY="256.0" prefHeight="27.0" prefWidth="178.0" promptText="Correo del Cliente" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="117.0" layoutY="328.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateClient" prefHeight="31.0" prefWidth="90.0" text="Crear Cliente" />
+            <TextField fx:id="clientSurname2Field" layoutX="100.0" layoutY="143.0" prefHeight="26.0" prefWidth="178.0" promptText="2do Apellido del Cliente" />
+            <Label layoutX="10.0" layoutY="148.0" text="2do Apellido">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <Label fx:id="nameError" layoutX="100.0" layoutY="62.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="surnameError" layoutX="101.0" layoutY="119.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="surname2Error" layoutX="100.0" layoutY="175.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="phoneError" layoutX="100.0" layoutY="232.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="emailError" layoutX="100.0" layoutY="289.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
          </children>
       </Pane>
       <VBox layoutX="-5.0" prefHeight="600.0" prefWidth="65.0" styleClass="sidebar" stylesheets="@../../Styles/stylesheet.css">

@@ -15,4 +15,10 @@ module com.jorgealvarezpb7.client_rewards_app {
 
     opens com.jorgealvarezpb7.client_rewards_app.Models to javafx.fxml;
     exports com.jorgealvarezpb7.client_rewards_app.Models;
+
+    opens com.jorgealvarezpb7.client_rewards_app.Utilities.Validator to javafx.fxml;
+    exports com.jorgealvarezpb7.client_rewards_app.Utilities.Validator;
+
+    opens com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations to javafx.fxml;
+    exports com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations;
 }
