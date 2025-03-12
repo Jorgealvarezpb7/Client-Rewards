@@ -20,9 +20,10 @@
             <TextField fx:id="productQuantityField" layoutX="10.0" layoutY="139.0" prefHeight="27.0" prefWidth="178.0" promptText="Cantidad del producto" />
             <Label layoutX="11.0" layoutY="14.0" text="Producto" />
             <TextField fx:id="productNameField" layoutX="10.0" layoutY="32.0" prefHeight="26.0" prefWidth="178.0" promptText="Nombre del producto" />
-            <Label layoutX="10.0" layoutY="174.0" prefHeight="18.0" prefWidth="74.0" text="Precio" />
-            <TextField fx:id="productPriceField" layoutX="10.0" layoutY="193.0" prefHeight="27.0" prefWidth="178.0" promptText="Precio del producto" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="241.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateProduct" prefHeight="31.0" prefWidth="119.0" text="Agregar Producto" />
+            <Label layoutX="10.0" layoutY="188.0" prefHeight="18.0" prefWidth="74.0" text="Precio" />
+            <TextField fx:id="productPriceField" layoutX="10.0" layoutY="210.0" prefHeight="27.0" prefWidth="178.0" promptText="Precio del producto" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="260.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateProduct" prefHeight="31.0" prefWidth="119.0" text="Agregar Producto" />
+            <Label fx:id="quantityError" layoutX="10.0" layoutY="170.0" prefHeight="18.0" prefWidth="178.0" textFill="RED" />
          </children>
       </Pane>
       <VBox layoutX="-5.0" prefHeight="600.0" prefWidth="65.0" styleClass="sidebar" stylesheets="@../../Styles/stylesheet.css">

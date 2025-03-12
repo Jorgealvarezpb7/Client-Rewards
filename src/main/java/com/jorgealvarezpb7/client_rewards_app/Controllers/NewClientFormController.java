@@ -69,7 +69,7 @@ public class NewClientFormController extends Authenticated {
                 case "surname":
                     this.surnameError.setText(ve.getMessage());
                     break;
-                    case "surname2":
+                case "surname2":
                     this.surname2Error.setText(ve.getMessage());
                     break;
                 case "phone":

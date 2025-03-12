@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.EmailAdressValidate;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.PhoneNumberValidate;
+import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.QuantityValidate;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.ValidateRequired;
 
 public class Validator {
@@ -25,6 +26,11 @@ public class Validator {
 
     public Validator isEmailAdress() {
         this.validations.add(new EmailAdressValidate());
+        return this;
+    }
+
+    public Validator isQuantity(int min, int max) {
+        this.validations.add(new QuantityValidate(min, max));
         return this;
     }
 
