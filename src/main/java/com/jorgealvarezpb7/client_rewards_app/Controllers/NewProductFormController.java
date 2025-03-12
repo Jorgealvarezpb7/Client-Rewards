@@ -41,7 +41,7 @@ public class NewProductFormController extends Authenticated{
 
             this.productService.createProduct(productName, productId, productQuantityInt, productPriceDouble);
             this.goToInventory(event);
-    } catch (ValidatorError ve) {
+        } catch (ValidatorError ve) {
             switch (ve.getField()) {
                 case "quantity":
                     this.quantityError.setText(ve.getMessage());

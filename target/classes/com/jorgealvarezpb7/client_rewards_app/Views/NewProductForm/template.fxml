@@ -12,18 +12,33 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgealvarezpb7.client_rewards_app.Controllers.NewProductFormController">
    <children>
-      <Pane layoutX="412.0" layoutY="160.0" prefHeight="302.0" prefWidth="200.0" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="412.0" AnchorPane.topAnchor="110.0">
+      <Pane layoutX="291.0" layoutY="101.0" prefHeight="399.0" prefWidth="324.0" AnchorPane.bottomAnchor="101.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="360.0" AnchorPane.topAnchor="101.0">
          <children>
-            <TextField fx:id="productIdField" layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="178.0" promptText="Id del producto" />
-            <Label layoutX="11.0" layoutY="68.0" text="Id" />
-            <Label layoutX="10.0" layoutY="120.0" prefHeight="18.0" prefWidth="74.0" text="Cantidad" />
-            <TextField fx:id="productQuantityField" layoutX="10.0" layoutY="139.0" prefHeight="27.0" prefWidth="178.0" promptText="Cantidad del producto" />
-            <Label layoutX="11.0" layoutY="14.0" text="Producto" />
-            <TextField fx:id="productNameField" layoutX="10.0" layoutY="32.0" prefHeight="26.0" prefWidth="178.0" promptText="Nombre del producto" />
-            <Label layoutX="10.0" layoutY="188.0" prefHeight="18.0" prefWidth="74.0" text="Precio" />
-            <TextField fx:id="productPriceField" layoutX="10.0" layoutY="210.0" prefHeight="27.0" prefWidth="178.0" promptText="Precio del producto" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="260.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateProduct" prefHeight="31.0" prefWidth="119.0" text="Agregar Producto" />
-            <Label fx:id="quantityError" layoutX="10.0" layoutY="170.0" prefHeight="18.0" prefWidth="178.0" textFill="RED" />
+            <TextField fx:id="productIdField" layoutX="100.0" layoutY="87.0" prefHeight="26.0" prefWidth="178.0" promptText="Id del producto" />
+            <Label layoutX="10.0" layoutY="90.0" text="Id">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <Label layoutX="10.0" layoutY="147.0" prefHeight="18.0" prefWidth="74.0" text="Cantidad">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <TextField fx:id="productQuantityField" layoutX="100.0" layoutY="143.0" prefHeight="27.0" prefWidth="178.0" promptText="Cantidad del producto" />
+            <Label layoutX="10.0" layoutY="34.0" text="Producto">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <TextField fx:id="productNameField" layoutX="100.0" layoutY="30.0" prefHeight="26.0" prefWidth="178.0" promptText="Nombre del producto" />
+            <Label layoutX="10.0" layoutY="205.0" prefHeight="18.0" prefWidth="74.0" text="Precio">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <TextField fx:id="productPriceField" layoutX="100.0" layoutY="201.0" prefHeight="27.0" prefWidth="178.0" promptText="Precio del producto" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="302.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateProduct" prefHeight="31.0" prefWidth="119.0" text="Agregar Producto" />
+            <Label fx:id="quantityError" layoutX="10.0" layoutY="176.0" prefHeight="18.0" prefWidth="268.0" textFill="RED" />
+            <Label fx:id="nameError" layoutX="10.0" layoutY="62.0" prefHeight="18.0" prefWidth="268.0" textFill="RED" />
+            <Label fx:id="idError" layoutX="10.0" layoutY="119.0" prefHeight="18.0" prefWidth="268.0" textFill="RED" />
+            <Label fx:id="priceError" layoutX="10.0" layoutY="235.0" prefHeight="18.0" prefWidth="268.0" textFill="RED" />
          </children>
       </Pane>
       <VBox layoutX="-5.0" prefHeight="600.0" prefWidth="65.0" styleClass="sidebar" stylesheets="@../../Styles/stylesheet.css">
