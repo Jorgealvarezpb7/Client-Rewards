@@ -3,6 +3,7 @@ package com.jorgealvarezpb7.client_rewards_app.Controllers;
 import java.io.IOException;
 
 import com.jorgealvarezpb7.client_rewards_app.App;
+import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validator;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.ValidatorError;
@@ -12,12 +13,18 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class NewClientFormController extends Authenticated {
+public class NewClientFormController extends AppNav {
+    private Authenticated authenticated;
+
     @FXML private TextField clientNameField;
     @FXML private TextField clientSurnameField;
     @FXML private TextField clientSurname2Field;
     @FXML private TextField clientPhoneField;
     @FXML private TextField clientEmailField;
+
+    public NewClientFormController() {
+        this.authenticated = Authenticated.getInstance();
+    }
 
     // Error Labels
     @FXML private Label nameError;
@@ -40,8 +47,9 @@ public class NewClientFormController extends Authenticated {
             String clientEmail = clientEmailField.getText();
 
             Validator namesValidator = new Validator()
-                .isRequired();
-            
+                .isRequired()
+                .isName();
+
             namesValidator.validate("name", clientName);
             namesValidator.validate("surname", clientSurname);
             namesValidator.validate("surname2", clientSurname2);
@@ -59,7 +67,7 @@ public class NewClientFormController extends Authenticated {
             emailAdresValidator.validate("email", clientEmail);
 
 
-            this.clientService.createClient(clientName, clientSurname, clientSurname2, clientPhone, clientEmail);
+            this.authenticated.clientService.createClient(clientName, clientSurname, clientSurname2, clientPhone, clientEmail);
             this.goToClients(event);
         } catch (ValidatorError ve) {
             switch (ve.getField()) {
@@ -80,7 +88,7 @@ public class NewClientFormController extends Authenticated {
                     break;
             }
         } catch (Exception ex) {
-            // hanhli
+            System.err.println(ex.toString());
         }
     }
 }

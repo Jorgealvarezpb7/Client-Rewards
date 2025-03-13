@@ -1,111 +1,68 @@
 package com.jorgealvarezpb7.client_rewards_app.Services;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 //import org.controlsfx.tools.Platform;
 
 import com.jorgealvarezpb7.client_rewards_app.App;
+import com.jorgealvarezpb7.client_rewards_app.Models.User;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Authenticated {
+public final class Authenticated {
     protected Database db;
     public ClientService clientService;
     public ProductService productService;
     public SaleService saleService;
-
-    //@FXML private Label dateAndTime;
-
-    //public User currentUser;
+    public User currentUser;
 
     public volatile boolean stop = false;
 
-    public Authenticated() {
+    private static final String ADMIN_USER_NAME = "admin";
+    private static final String ADMIN_USER_PSWD = "admin";
+
+    private static final String BASIC_USER_NAME = "user";
+    private static final String BASIC_USER_PSWD = "user";
+
+    private final static Authenticated INSTANCE = new Authenticated();
+
+    private Authenticated() {
         db = new Database();
         db.runMigrations();
         clientService = new ClientService();
         productService = new ProductService();
         saleService = new SaleService();
-
-        
-
-
-        //currentUser = new CurrentUser();
+        currentUser = null;
     }
 
-    @FXML
-    protected void goToClients(ActionEvent event) throws IOException {
-        App.setRoot("Views/Clients/template");
+    public static Authenticated getInstance() {
+        return Authenticated.INSTANCE;
     }
 
-    @FXML
-    protected void goToDashboard(ActionEvent event) throws IOException {
-        App.setRoot("Views/Dashboard/template");
+    public User getCurrentUser() {
+        return this.currentUser;
     }
 
-    @FXML
-    protected void goToInventory(ActionEvent event) throws IOException {
-        App.setRoot("Views/Inventory/template");
-    }
+    public boolean authenticate(String user, String pass) {
+        System.out.println("Auth: " + user + " : " + pass);
 
-    @FXML
-    protected void goToSales(ActionEvent event) throws IOException {
-        App.setRoot("Views/Sales/template");
-    }
+        if (user.equals(Authenticated.ADMIN_USER_NAME) && pass.equals(Authenticated.ADMIN_USER_PSWD)) {
+            this.currentUser = new User(user, pass, "admin");
+            return true;
+        }
 
-    @FXML
-    protected void goToClientInfo(ActionEvent event) throws IOException {
-        App.setRoot("Views/ClientInfo/template");
-    }
+        if (user.equals(Authenticated.BASIC_USER_NAME) && pass.equals(Authenticated.BASIC_USER_PSWD)) {
+            this.currentUser = new User(user, pass, "basic");
+            return true;
+        }
 
-    @FXML
-    protected void goToNewClientForm(ActionEvent event) throws IOException {
-        App.setRoot("Views/NewClientForm/template");
+        return false;
     }
-
-    @FXML
-    protected void goToNewProductForm(ActionEvent event) throws IOException {
-        App.setRoot("Views/NewProductForm/template");
-    }
-
-    @FXML
-    protected void goToNewSaleForm(ActionEvent event) throws IOException {
-        App.setRoot("Views/NewSaleForm/template");
-    }
-
-    @FXML
-    protected void signOut(ActionEvent event) throws IOException {
-        App.setRoot("Views/Auth/template");
-    }
-
-    public void timeNow() {
-        Thread thread = new Thread(() -> {
-            SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
-            while (!stop) {
-                try {
-                    Thread.sleep(1000);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-                final String timeNow = sdf.format(new Date());
-                javafx.application.Platform.runLater(()->{
-                    System.out.println(timeNow);
-                    //time.setText(timeNow);
-                }); 
-            }
-        });
-        thread.start();
-    }
-
-        public void dateNow () {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        String dateNow = sdf.format(new Date());
-        System.out.println(dateNow);
-        //time.setText(dateNow);
-    }
-
 
 }

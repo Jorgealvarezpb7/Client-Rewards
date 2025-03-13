@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="parent" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgealvarezpb7.client_rewards_app.Controllers.DashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="parent" stylesheets="@../../Styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgealvarezpb7.client_rewards_app.Controllers.DashboardController">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="50.0" styleClass="sidebar" stylesheets="@../../Styles/stylesheet.css" BorderPane.alignment="CENTER">
          <children>
@@ -54,7 +54,7 @@
                         <Insets left="10.0" top="350.0" />
                      </VBox.margin>
                   </Separator>
-                  <Button onAction="#signOut" mnemonicParsing="false" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
+                  <Button mnemonicParsing="false" onAction="#signOut" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
                      <VBox.margin>
                         <Insets bottom="10.0" left="8.0" top="10.0" />
                      </VBox.margin>
@@ -74,7 +74,7 @@
                <children>
                   <HBox>
                      <children>
-                        <Label text="Dashboard">
+                        <Label prefHeight="49.0" prefWidth="131.0" text="Dashboard">
                            <padding>
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </padding>
@@ -82,26 +82,43 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Separator orientation="VERTICAL">
+                        <Separator orientation="VERTICAL" prefHeight="49.0" prefWidth="13.0">
                            <HBox.margin>
                               <Insets left="10.0" right="10.0" />
                            </HBox.margin>
                         </Separator>
-                        <Label layoutX="10.0" layoutY="10.0" text="Hola. Bienvenido de vuelta,  + userType" textFill="#0000006c">
+                        <Label fx:id="saludoUserType" layoutX="10.0" layoutY="10.0" prefHeight="48.0" prefWidth="230.0" text="Bienvenido de vuelta! " textFill="#0000006c">
                            <padding>
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </padding>
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </Label>
-                        <Label  id="dateAndTime" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="136.0" layoutY="10.0" maxWidth="1.7976931348623157E308" text="20:45   06 Mar 2025" textFill="#0000006c" HBox.hgrow="ALWAYS">
+                        <Label fx:id="date" alignment="CENTER" contentDisplay="RIGHT" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="81.0" text="date" textFill="#0000006c">
                            <padding>
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </padding>
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets left="365.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="time" alignment="CENTER" contentDisplay="RIGHT" layoutX="136.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="131.0" text="time" textFill="#0000006c">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </Label>
                      </children>
                   </HBox>

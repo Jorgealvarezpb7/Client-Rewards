@@ -3,6 +3,7 @@ package com.jorgealvarezpb7.client_rewards_app.Controllers;
 import java.io.IOException;
 
 import com.jorgealvarezpb7.client_rewards_app.App;
+import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validator;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.ValidatorError;
@@ -12,23 +13,47 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class NewProductFormController extends Authenticated{
+public class NewProductFormController extends AppNav {
+    private Authenticated authenticated;
+
     @FXML private TextField productNameField;
     @FXML private TextField productIdField;
     @FXML private TextField productQuantityField;
     @FXML private TextField productPriceField;
 
+    public NewProductFormController() {
+        this.authenticated = Authenticated.getInstance();
+    }
+
      // Error Labels
+    @FXML private Label nameError;
+    @FXML private Label idError;
     @FXML private Label quantityError;
+    @FXML private Label priceError;
 
     @FXML protected void handleCreateProduct(ActionEvent event) throws IOException {
         try {
+            nameError.setText("");
+            idError.setText("");
             quantityError.setText("");
+            priceError.setText("");
 
             String productName = productNameField.getText();
             String productId = productIdField.getText();
             String productQuantity = productQuantityField.getText();
             String productPrice = productPriceField.getText();
+
+            Validator namesValidator = new Validator()
+                .isRequired()
+                .isName();
+
+            namesValidator.validate("name", productName);
+
+            Validator idValidator = new Validator()
+                .isRequired()
+                .isId();
+        
+            idValidator.validate("id", productId);
 
             Validator quantityValidator = new Validator()
                 .isRequired()
@@ -36,15 +61,30 @@ public class NewProductFormController extends Authenticated{
 
             quantityValidator.validate("quantity", productQuantity);
 
+            Validator priceValidator = new Validator()
+                .isRequired()
+                .isAmount();
+
+                priceValidator.validate("price", productPrice);
+
             int productQuantityInt = Integer.parseInt(productQuantity);
             Double productPriceDouble = Double.parseDouble(productPrice);
 
-            this.productService.createProduct(productName, productId, productQuantityInt, productPriceDouble);
+            this.authenticated.productService.createProduct(productName, productId, productQuantityInt, productPriceDouble);
             this.goToInventory(event);
         } catch (ValidatorError ve) {
             switch (ve.getField()) {
+                case "name":
+                    this.nameError.setText(ve.getMessage());
+                    break;
+                case "id":
+                    this.idError.setText(ve.getMessage());
+                    break;
                 case "quantity":
                     this.quantityError.setText(ve.getMessage());
+                    break;
+                case "price":
+                    this.priceError.setText(ve.getMessage());
                     break;
                 default:
                 break;
