@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
+
 /**
  * JavaFX App
  */
@@ -28,10 +30,11 @@ public class App extends Application {
         stage.getIcons().add(image);
     }
     public static void setRoot(String fxml) throws IOException {
+        Authenticated.getInstance();
         scene.setRoot(loadFXML(fxml));
     }
 
-    private static Parent loadFXML(String fxml) throws IOException {
+    public static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
