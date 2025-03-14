@@ -110,7 +110,7 @@
                             <TableColumn fx:id="quantityColumn" prefWidth="133.0" text="Cantidad" />
                             <TableColumn fx:id="clientIdColumn" prefWidth="133.0" text="Id Cliente" />
                             <TableColumn fx:id="totalAmountColumn" prefWidth="133.0" text="Monto Total" />
-                            <TableColumn prefWidth="133.0" text="Puntos" />
+                            <TableColumn fx:id="pointsColumn" prefWidth="133.0" text="Puntos" />
                             <TableColumn fx:id="createdAtColumn" prefWidth="133.0" text="F.Creacion" />
                           </columns>
                            <HBox.margin>

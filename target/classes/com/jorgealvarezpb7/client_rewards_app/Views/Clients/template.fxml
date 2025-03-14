@@ -106,13 +106,13 @@
                      <children>
                         <TableView fx:id="clientsTable" prefHeight="340.0" prefWidth="800.0">
                           <columns>
-                            <TableColumn fx:id="nameColumn" prefWidth="133.0" text="Nombre" />
-                            <TableColumn fx:id="surnameColumn" prefWidth="133.0" text="Apellido" />
-                            <TableColumn fx:id="surname2Column" prefWidth="133.0" text="2do Apellido" />
-                            <TableColumn fx:id="phoneColumn" prefWidth="133.0" text="Movil" />
-                            <TableColumn fx:id="emailColumn" prefWidth="133.0" text="Correo" />
-                            <TableColumn prefWidth="133.0" text="Puntos" />
-                            <TableColumn fx:id="createdAtColumn" prefWidth="133.0" text="F.Creacion" />
+                            <TableColumn fx:id="nameColumn" prefWidth="100" text="Nombre" />
+                            <TableColumn fx:id="surnameColumn" prefWidth="100" text="Apellido" />
+                            <TableColumn fx:id="clientIdColumn" prefWidth="100" text="Id cliente" />
+                            <TableColumn fx:id="phoneColumn" prefWidth="100" text="Movil" />
+                            <TableColumn fx:id="emailColumn" prefWidth="100" text="Correo" />
+                            <TableColumn fx:id="pointsColumn" prefWidth="100" text="Puntos" />
+                            <TableColumn fx:id="createdAtColumn" prefWidth="100" text="F.Creacion" />
                           </columns>
                            <HBox.margin>
                               <Insets left="40.0" right="20.0" />
@@ -122,11 +122,6 @@
                   </HBox>
                   <HBox alignment="BOTTOM_RIGHT">
                      <children>
-                        <Button id="clientesInfo" mnemonicParsing="false" onAction="#goToClientInfo" prefHeight="26.0" prefWidth="107.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css" text="Ver Cliente" HBox.hgrow="ALWAYS">
-                           <HBox.margin>
-                              <Insets right="590.0" />
-                           </HBox.margin>
-                        </Button>
                         <Button id="agregarCliente" layoutX="745.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToNewClientForm" prefHeight="26.0" prefWidth="107.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css" text="Crear Cliente">
                            <HBox.margin>
                               <Insets right="40.0" />

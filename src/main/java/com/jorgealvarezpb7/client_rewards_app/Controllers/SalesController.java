@@ -24,6 +24,7 @@ public class SalesController extends AppNav implements Initializable{
     @FXML private TableColumn<Sale, Integer> quantityColumn;
     @FXML private TableColumn<Sale, String> clientIdColumn;
     @FXML private TableColumn<Sale, Double> totalAmountColumn;
+    @FXML private TableColumn<Sale, Double> pointsColumn;
     @FXML private TableColumn<Sale, Integer> createdAtColumn;
 
     public SalesController() {
@@ -39,6 +40,7 @@ public class SalesController extends AppNav implements Initializable{
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Sale, Integer>("quantity"));
         clientIdColumn.setCellValueFactory(new PropertyValueFactory<Sale, String>("clientId"));
         totalAmountColumn.setCellValueFactory(new PropertyValueFactory<Sale, Double>("totalAmount"));
+        pointsColumn.setCellValueFactory(new PropertyValueFactory<Sale, Double>("points"));
         createdAtColumn.setCellValueFactory(new PropertyValueFactory<Sale, Integer>("createdAt"));
         salesTable.setItems(salesObs);
     }

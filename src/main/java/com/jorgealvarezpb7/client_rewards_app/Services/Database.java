@@ -19,7 +19,7 @@ public class Database {
     public void runMigrations() {
         try {
             Statement st = conn.createStatement();
-            st.execute("CREATE TABLE IF NOT EXISTS clients (name TEXT, surname TEXT, surname2 TEXT, phone TEXT, email TEXT, createdAt INTEGER)");
+            st.execute("CREATE TABLE IF NOT EXISTS clients (name TEXT, surname TEXT, points INTEGER, clientId TEXT, phone TEXT, email TEXT, createdAt INTEGER)");
             st.execute("CREATE TABLE IF NOT EXISTS products (name TEXT, id TEXT, quantity INTEGER, price REAL, createdAt INTEGER)");
             st.execute("CREATE TABLE IF NOT EXISTS sales (productId TEXT, quantity INTEGER, clientId TEXT, totalAmount REAL, createdAt INTEGER)");
         

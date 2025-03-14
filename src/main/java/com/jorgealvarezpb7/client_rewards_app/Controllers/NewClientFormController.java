@@ -18,7 +18,7 @@ public class NewClientFormController extends AppNav {
 
     @FXML private TextField clientNameField;
     @FXML private TextField clientSurnameField;
-    @FXML private TextField clientSurname2Field;
+    @FXML private TextField clientIdField;
     @FXML private TextField clientPhoneField;
     @FXML private TextField clientEmailField;
 
@@ -29,7 +29,7 @@ public class NewClientFormController extends AppNav {
     // Error Labels
     @FXML private Label nameError;
     @FXML private Label surnameError;
-    @FXML private Label surname2Error;
+    @FXML private Label clientIdError;
     @FXML private Label phoneError;
     @FXML private Label emailError;
 
@@ -37,12 +37,13 @@ public class NewClientFormController extends AppNav {
         try {
             nameError.setText("");
             surnameError.setText("");
+            clientIdError.setText("");
             phoneError.setText("");
             emailError.setText("");
 
             String clientName = clientNameField.getText();
             String clientSurname = clientSurnameField.getText();
-            String clientSurname2 = clientSurname2Field.getText();
+            String clientId = clientIdField.getText();
             String clientPhone = clientPhoneField.getText();
             String clientEmail = clientEmailField.getText();
 
@@ -52,13 +53,18 @@ public class NewClientFormController extends AppNav {
 
             namesValidator.validate("name", clientName);
             namesValidator.validate("surname", clientSurname);
-            namesValidator.validate("surname2", clientSurname2);
 
             Validator phoneNumValidator = new Validator()
                 .isRequired()
                 .isPhoneNumber();
             
             phoneNumValidator.validate("phone", clientPhone);
+
+            Validator idValidator = new Validator()
+            .isRequired()
+            .isId();
+    
+            idValidator.validate("id", clientId);
 
             Validator emailAdresValidator = new Validator()
                 .isRequired()
@@ -67,7 +73,7 @@ public class NewClientFormController extends AppNav {
             emailAdresValidator.validate("email", clientEmail);
 
 
-            this.authenticated.clientService.createClient(clientName, clientSurname, clientSurname2, clientPhone, clientEmail);
+            this.authenticated.clientService.createClient(clientName, clientSurname, clientId, clientPhone, clientEmail);
             this.goToClients();
         } catch (ValidatorError ve) {
             switch (ve.getField()) {
@@ -77,8 +83,8 @@ public class NewClientFormController extends AppNav {
                 case "surname":
                     this.surnameError.setText(ve.getMessage());
                     break;
-                case "surname2":
-                    this.surname2Error.setText(ve.getMessage());
+                case "id":
+                    this.clientIdError.setText(ve.getMessage());
                     break;
                 case "phone":
                     this.phoneError.setText(ve.getMessage());

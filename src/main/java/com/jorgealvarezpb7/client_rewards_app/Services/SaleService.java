@@ -25,13 +25,15 @@ public class SaleService {
                 quantity,
                 clientId,
                 totalAmount,
+                points,
                 createdAt
             ) VALUES (
                 ?,
                 ?,
                 ?,
                 ?,
-                ? 
+                ?,
+                ?
             );
         """;
 
@@ -48,10 +50,40 @@ public class SaleService {
         } catch (SQLException err) {
             System.err.println(err);
         }
+
+        String query2 = """
+                UPDATE clients
+                    SET points = (
+                    SELECT CAST(SUM(totalAmount) * ? AS INTEGER)
+                    FROM sales
+                    WHERE sales.clientId = clients.clientId
+                )
+                WHERE clientId IN (SELECT DISTINCT clientId FROM sales);
+                """;
+
+        try {
+            Double garcaLvl = 0.10;
+            PreparedStatement ps  = db.getConn().prepareStatement(query2);
+            ps.setDouble(1, garcaLvl);
+            ps.execute();
+        } catch (SQLException err) {
+            System.err.println(err);
+        }
     }
 
     public ArrayList<Sale> listSales() {
-        String query = "SELECT * FROM sales";
+        String query = """
+                SELECT
+                    sales.*,
+                    SUM(c.points) AS points
+                FROM
+                    sales
+                    RIGHT JOIN clients c ON c.clientId = sales.clientId
+                WHERE
+                    sales.totalAmount > 0
+                GROUP BY
+                    sales.clientId
+                """;
         try {
             Statement st = db.getConn().createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -62,9 +94,11 @@ public class SaleService {
                 int quantity = rs.getInt("quantity");
                 String clientId = rs.getString("clientId");
                 Double totalAmount = rs.getDouble("totalAmount");
+                Double points = rs.getDouble("points");
                 Long createdAt = rs.getLong("createdAt");
                 Date date = new Date(createdAt);
-                Sale sale = new Sale (productId, quantity, clientId, totalAmount, date);
+               
+                Sale sale = new Sale (productId, quantity, clientId, totalAmount, points, date);
                 sales.add(sale);
             }
             

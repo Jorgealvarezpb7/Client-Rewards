@@ -17,13 +17,14 @@ public class ClientService {
         db = new Database();
     }
 
-    public void createClient(String name, String surname,  String surname2, String phone, String email) {
+    public void createClient(String name, String surname,  String id, String phone, String email) {
         //if (name.isEmpty()) { 
         String query = """
             INSERT INTO clients (
                 name,
                 surname,
-                surname2,
+                id,
+                points,
                 phone,
                 email,
                 createdAt
@@ -31,6 +32,7 @@ public class ClientService {
                 ?,
                 ?,
                 ?,
+                0,
                 ?,
                 ?,
                 ? 
@@ -43,7 +45,7 @@ public class ClientService {
             PreparedStatement ps = db.getConn().prepareStatement(query);
             ps.setString(1, name);
             ps.setString(2, surname);
-            ps.setString(3, surname2);
+            ps.setString(3, id);
             ps.setString(4, phone);
             ps.setString(5, email);
             ps.setLong(6, timestamp.getTime());
@@ -63,12 +65,13 @@ public class ClientService {
             while (rs.next()) {
                 String name = rs.getString("name");
                 String surname = rs.getString("surname");
-                String surname2 = rs.getString("surname2");
+                String id = rs.getString("clientId");
                 String phone = rs.getString("phone");
                 String email = rs.getString("email");
+                Double points = rs.getDouble("points");
                 Long createdAt = rs.getLong("createdAt");
                 Date date = new Date(createdAt);
-                Client client = new Client(name, surname, surname2, phone, email, date);
+                Client client = new Client(name, surname, id, points, phone, email, date);
                 clients.add(client);
             }
             

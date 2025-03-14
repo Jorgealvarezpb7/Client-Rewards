@@ -7,14 +7,16 @@ public class Sale {
     private int quantity;
     private String clientId;
     private Double totalAmount;
+    private Double points;
     private Date createdAt;
 
 
-    public Sale (String productId, int quantity, String clientId, Double totalAmount, Date createdAt) { 
+    public Sale (String productId, int quantity, String clientId, Double totalAmount, Double points, Date createdAt) { 
         this.productId = productId;
         this.quantity = quantity;
         this.clientId = clientId;
         this.totalAmount = totalAmount;
+        this.points = points;
         this.createdAt = createdAt;
     }
     
@@ -48,6 +50,14 @@ public class Sale {
 
     public Double getTotalAmount() {
         return totalAmount;
+    }
+
+    public Double getPoints() {
+        return points;
+    }
+
+    public void setPoints(Double points) {
+        this.points = points;
     }
 
     public void setCreatedAt(Date createdAt) {

@@ -5,15 +5,17 @@ import java.util.Date;
 public class Client {
     private String name;
     private String surname;
-    private String surname2;
+    private String id;
+    private Double points;
     private String phone;
     private String email;
     private Date createdAt;
 
-    public Client(String name, String surname, String surname2, String phone, String email, Date createdAt) { 
+    public Client(String name, String surname, String id, Double points, String phone, String email, Date createdAt) { 
         this.name = name;
         this.surname = surname;
-        this.surname2 = surname2;
+        this.id = id;
+        this.points = points;
         this.phone = phone;
         this.email = email;
         this.createdAt = createdAt;
@@ -35,14 +37,22 @@ public class Client {
         return surname;
     }
 
-    public void setSurname2(String surname2) {
-        this.surname2 = surname2;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getSurname2() {
-        return surname2;
+    public String getId() {
+        return id;
     }
 
+    public Double getPoints() {
+        return points;
+    }
+
+    public void setPoints(Double points) {
+        this.points = points;
+    }
+    
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -66,4 +76,5 @@ public class Client {
     public Date getCreatedAt() {
         return createdAt;
     }
+
 }

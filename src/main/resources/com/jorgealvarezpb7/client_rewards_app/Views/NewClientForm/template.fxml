@@ -35,8 +35,8 @@
                </padding></Label>
             <TextField fx:id="clientEmailField" layoutX="100.0" layoutY="256.0" prefHeight="27.0" prefWidth="178.0" promptText="Correo del Cliente" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="117.0" layoutY="328.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateClient" prefHeight="31.0" prefWidth="90.0" text="Crear Cliente" />
-            <TextField fx:id="clientSurname2Field" layoutX="100.0" layoutY="143.0" prefHeight="26.0" prefWidth="178.0" promptText="2do Apellido del Cliente" />
-            <Label layoutX="10.0" layoutY="148.0" text="2do Apellido">
+            <TextField fx:id="clientIdField" layoutX="100.0" layoutY="143.0" prefHeight="26.0" prefWidth="178.0" promptText="Id del cliente" />
+            <Label layoutX="10.0" layoutY="148.0" text="Id">
                <padding>
                   <Insets left="10.0" />
                </padding></Label>
@@ -50,7 +50,7 @@
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Label fx:id="surname2Error" layoutX="100.0" layoutY="175.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+            <Label fx:id="clientIdError" layoutX="100.0" layoutY="175.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
                <padding>
                   <Insets left="10.0" />
                </padding>
