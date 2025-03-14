@@ -68,7 +68,7 @@ public class NewClientFormController extends AppNav {
 
 
             this.authenticated.clientService.createClient(clientName, clientSurname, clientSurname2, clientPhone, clientEmail);
-            this.goToClients(event);
+            this.goToClients();
         } catch (ValidatorError ve) {
             switch (ve.getField()) {
                 case "name":

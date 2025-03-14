@@ -64,7 +64,7 @@ public class NewSaleFormController extends AppNav {
                 Double saleTotalAmountDouble = Double.parseDouble(saleTotalAmount);
 
                 this.authenticated.saleService.createSale(saleProductId, saleQuantityInt, saleClientId, saleTotalAmountDouble);
-                this.goToSales(event);
+                this.goToSales();
                         } catch (ValidatorError ve) {
                     switch (ve.getField()) {
                         case "productId":

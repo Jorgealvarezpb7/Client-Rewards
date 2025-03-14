@@ -14,27 +14,27 @@ import javafx.stage.Stage;
 public class AppNav {
     
     @FXML
-    public void goToClients(ActionEvent event) throws IOException {
+    public void goToClients() throws IOException {
         App.setRoot("Views/Clients/template");
     }
 
     @FXML
-    public void goToDashboard(ActionEvent event) throws IOException {
+    public void goToDashboard() throws IOException {
         App.setRoot("Views/Dashboard/template");
     }
 
     @FXML
-    public void goToInventory(ActionEvent event) throws IOException {
+    public void goToInventory() throws IOException {
         App.setRoot("Views/Inventory/template");
     }
 
     @FXML
-    public void goToSales(ActionEvent event) throws IOException {
+    public void goToSales() throws IOException {
         App.setRoot("Views/Sales/template");
     }
 
     @FXML
-    public void goToClientInfo(ActionEvent event) throws IOException {
+    public void goToClientInfo() throws IOException {
         App.setRoot("Views/ClientInfo/template");
     }
 
@@ -49,12 +49,12 @@ public class AppNav {
     }
 
     @FXML
-    public void goToNewSaleForm(ActionEvent event) throws IOException {
+    public void goToNewSaleForm() throws IOException {
         App.setRoot("Views/NewSaleForm/template");
     }
 
     @FXML
-    public void signOut(ActionEvent event) throws IOException {
+    public void signOut() throws IOException {
         App.setRoot("Views/Auth/template");
     }
 }

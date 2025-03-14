@@ -1,19 +1,7 @@
 package com.jorgealvarezpb7.client_rewards_app.Services;
 
-import java.io.IOException;
-
-//import org.controlsfx.tools.Platform;
-
-import com.jorgealvarezpb7.client_rewards_app.App;
+import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 import com.jorgealvarezpb7.client_rewards_app.Models.User;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public final class Authenticated {
     protected Database db;
@@ -21,6 +9,8 @@ public final class Authenticated {
     public ProductService productService;
     public SaleService saleService;
     public User currentUser;
+
+    private Client activeClient = null;
 
     public volatile boolean stop = false;
 
@@ -65,4 +55,11 @@ public final class Authenticated {
         return false;
     }
 
+    public void setActiveClient(Client activeClient) {
+        this.activeClient = activeClient;
+    }
+
+    public Client getActiveClient() {
+        return activeClient;
+    }
 }

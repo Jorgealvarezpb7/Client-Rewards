@@ -89,7 +89,7 @@
                               <Insets left="10.0" right="10.0" />
                            </HBox.margin>
                         </Separator>
-                        <Label layoutX="10.0" layoutY="10.0" text="&lt;Nombre del cliente&gt;" textFill="#0000006c">
+                        <Label fx:id="nombreCliente" layoutX="10.0" layoutY="10.0" text="&lt;Nombre del cliente&gt;" textFill="#0000006c">
                            <padding>
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </padding>

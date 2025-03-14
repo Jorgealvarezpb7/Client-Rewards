@@ -28,7 +28,7 @@ public class DashboardController extends AppNav implements Initializable {
         this.authenticated = Authenticated.getInstance();
         User currentUser = this.authenticated.getCurrentUser();
         this.saludoUserType.setText(
-                "Bienvenido de vuelta " + currentUser.getUserName() + " (" + currentUser.getUserType() + ")" + "!");
+                "Bienvenido de vuelta, " + currentUser.getUserName()+ "!" + " Ról: " + currentUser.getUserType());
 
         Thread thread = new Thread(() -> {
             SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");

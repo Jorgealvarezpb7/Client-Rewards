@@ -4,6 +4,7 @@ module com.jorgealvarezpb7.client_rewards_app {
     requires javafx.graphics;
     requires java.sql;
     requires java.base;
+    requires javafx.base;
 
     opens com.jorgealvarezpb7.client_rewards_app to javafx.fxml;
     exports com.jorgealvarezpb7.client_rewards_app;

@@ -71,7 +71,7 @@ public class NewProductFormController extends AppNav {
             Double productPriceDouble = Double.parseDouble(productPrice);
 
             this.authenticated.productService.createProduct(productName, productId, productQuantityInt, productPriceDouble);
-            this.goToInventory(event);
+            this.goToInventory();
         } catch (ValidatorError ve) {
             switch (ve.getField()) {
                 case "name":

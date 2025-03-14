@@ -27,7 +27,7 @@ public class AuthController extends AppNav {
         boolean isAuthenticated = this.authenticated.authenticate(username, password);
 
         if (isAuthenticated) {
-            this.goToDashboard(event);
+            this.goToDashboard();
         } else {
             System.out.println("Not auth");
         }
