@@ -43,11 +43,11 @@ public class DashboardController extends AppNav implements Initializable {
                     time.setText(timeNow);
                 });
             }
-        });
-        thread.start();
+        });thread.start();
 
         SimpleDateFormat sdf2 = new SimpleDateFormat("MMM/dd/yyyy");
         String dateNow = sdf2.format(new Date());
         date.setText(dateNow);
     }
-}
+} 
+  
