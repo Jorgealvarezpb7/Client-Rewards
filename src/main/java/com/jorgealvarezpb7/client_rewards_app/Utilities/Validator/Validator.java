@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.EmailAdressValidate;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.PhoneNumberValidate;
+import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.ProductIdValidate;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.QuantityValidate;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.AmountValidate;
+import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.ClientIdValidate;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.ValidateRequired;
-import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.IdValidate;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validations.NameValidate;
 public class Validator {
     private ArrayList<ValidatorEval> validations;
@@ -41,8 +42,13 @@ public class Validator {
         return this;
     }
 
-    public Validator isId() {
-        this.validations.add(new IdValidate());
+    public Validator isProductId() {
+        this.validations.add(new ProductIdValidate());
+        return this;
+    }
+
+    public Validator isClientId() {
+        this.validations.add(new ClientIdValidate());
         return this;
     }
 

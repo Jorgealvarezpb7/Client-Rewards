@@ -41,18 +41,23 @@ public class NewSaleFormController extends AppNav {
                 String saleClientId = saleClientIdField.getText();
                 String saleTotalAmount = saleTotalAmountField.getText();
 
-                Validator idValidator = new Validator()
+                Validator productIdValidator = new Validator()
                 .isRequired()
-                .isId();
+                .isProductId();
             
-                idValidator.validate("productId", saleProductId);
-                idValidator.validate("clientId", saleClientId);
+                productIdValidator.validate("productId", saleProductId);
                 
                 Validator quantityValidator = new Validator()
                 .isRequired()
                 .isQuantity(0, 100);
 
                 quantityValidator.validate("quantity", saleQuantity);
+
+                Validator clientIdValidator = new Validator()
+                .isRequired()
+                .isClientId();
+            
+                clientIdValidator.validate("clientId", saleClientId);
 
                 Validator totalAmountValidator = new Validator()
                 .isRequired()

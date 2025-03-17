@@ -50,6 +50,10 @@ public class Product {
         return price;
     }
 
+    public String getPriceWithCurrency() {
+        return this.price + "€";
+    }
+
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }

@@ -49,11 +49,11 @@ public class NewProductFormController extends AppNav {
 
             namesValidator.validate("name", productName);
 
-            Validator idValidator = new Validator()
+            Validator productIdValidator = new Validator()
                 .isRequired()
-                .isId();
+                .isProductId();
         
-            idValidator.validate("id", productId);
+                productIdValidator.validate("id", productId);
 
             Validator quantityValidator = new Validator()
                 .isRequired()

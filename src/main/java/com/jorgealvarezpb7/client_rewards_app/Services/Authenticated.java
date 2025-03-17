@@ -2,6 +2,7 @@ package com.jorgealvarezpb7.client_rewards_app.Services;
 
 import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 import com.jorgealvarezpb7.client_rewards_app.Models.User;
+import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validator;
 
 public final class Authenticated {
     protected Database db;

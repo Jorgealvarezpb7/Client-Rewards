@@ -54,24 +54,23 @@ public class NewClientFormController extends AppNav {
             namesValidator.validate("name", clientName);
             namesValidator.validate("surname", clientSurname);
 
+            Validator clientIdValidator = new Validator()
+            .isRequired()
+            .isClientId();
+    
+            clientIdValidator.validate("id", clientId);
+
             Validator phoneNumValidator = new Validator()
                 .isRequired()
                 .isPhoneNumber();
             
             phoneNumValidator.validate("phone", clientPhone);
 
-            Validator idValidator = new Validator()
-            .isRequired()
-            .isId();
-    
-            idValidator.validate("id", clientId);
-
             Validator emailAdresValidator = new Validator()
                 .isRequired()
                 .isEmailAdress();
 
             emailAdresValidator.validate("email", clientEmail);
-
 
             this.authenticated.clientService.createClient(clientName, clientSurname, clientId, clientPhone, clientEmail);
             this.goToClients();
@@ -88,8 +87,10 @@ public class NewClientFormController extends AppNav {
                     break;
                 case "phone":
                     this.phoneError.setText(ve.getMessage());
-                    case "email":
+                    break;
+                case "email":
                     this.emailError.setText(ve.getMessage());
+                    break;
                 default:
                     break;
             }

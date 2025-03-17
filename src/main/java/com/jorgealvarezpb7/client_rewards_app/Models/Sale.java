@@ -52,6 +52,10 @@ public class Sale {
         return totalAmount;
     }
 
+    public String getTotalAmountWithCurrency() {
+        return this.totalAmount + "€";
+    }
+
     public Double getPoints() {
         return points;
     }

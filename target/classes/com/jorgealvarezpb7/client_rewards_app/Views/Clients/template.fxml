@@ -56,7 +56,7 @@
                         <Insets left="10.0" top="350.0" />
                      </VBox.margin>
                   </Separator>
-                  <Button onAction="#signOut" mnemonicParsing="false" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
+                  <Button mnemonicParsing="false" onAction="#signOut" prefHeight="30.0" prefWidth="55.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css">
                      <VBox.margin>
                         <Insets bottom="10.0" left="8.0" top="10.0" />
                      </VBox.margin>
@@ -106,13 +106,13 @@
                      <children>
                         <TableView fx:id="clientsTable" prefHeight="340.0" prefWidth="800.0">
                           <columns>
-                            <TableColumn fx:id="nameColumn" prefWidth="100" text="Nombre" />
-                            <TableColumn fx:id="surnameColumn" prefWidth="100" text="Apellido" />
-                            <TableColumn fx:id="clientIdColumn" prefWidth="100" text="Id cliente" />
-                            <TableColumn fx:id="phoneColumn" prefWidth="100" text="Movil" />
-                            <TableColumn fx:id="emailColumn" prefWidth="100" text="Correo" />
-                            <TableColumn fx:id="pointsColumn" prefWidth="100" text="Puntos" />
-                            <TableColumn fx:id="createdAtColumn" prefWidth="100" text="F.Creacion" />
+                            <TableColumn fx:id="nameColumn" text="Nombre" />
+                            <TableColumn fx:id="surnameColumn" text="Apellido" />
+                            <TableColumn fx:id="clientIdColumn" text="Id cliente" />
+                            <TableColumn fx:id="phoneColumn" prefWidth="140.0" text="Movil" />
+                            <TableColumn fx:id="emailColumn" prefWidth="200" text="Correo" />
+                            <TableColumn fx:id="pointsColumn" text="Puntos" />
+                            <TableColumn fx:id="createdAtColumn" prefWidth="135.0" text="F.Creacion" />
                           </columns>
                            <HBox.margin>
                               <Insets left="40.0" right="20.0" />

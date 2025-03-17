@@ -27,7 +27,7 @@ public class InventoryController extends AppNav implements Initializable {
     @FXML private TableColumn<Product, String> nameColumn;
     @FXML private TableColumn<Product, String> idColumn;
     @FXML private TableColumn<Product, Integer> quantityColumn;
-    @FXML private TableColumn<Product, Double> priceColumn;
+    @FXML private TableColumn<Product, String> priceColumn;
     @FXML private TableColumn<Product, Integer> createdAtColumn;
 
     public InventoryController() {
@@ -42,7 +42,7 @@ public class InventoryController extends AppNav implements Initializable {
         nameColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("name"));
         idColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("Id"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("quantity"));
-        priceColumn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("priceWithCurrency"));
         createdAtColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("createdAt"));
         productsTable.setItems(productsObs);
     }

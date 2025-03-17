@@ -40,27 +40,27 @@
                <padding>
                   <Insets left="10.0" />
                </padding></Label>
-            <Label fx:id="nameError" layoutX="100.0" layoutY="62.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+            <Label fx:id="nameError" layoutX="19.0" layoutY="62.0" prefHeight="17.0" prefWidth="259.0" textFill="RED">
                <padding>
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Label fx:id="surnameError" layoutX="101.0" layoutY="119.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+            <Label fx:id="surnameError" layoutX="20.0" layoutY="119.0" prefHeight="17.0" prefWidth="259.0" textFill="RED">
                <padding>
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Label fx:id="clientIdError" layoutX="100.0" layoutY="175.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+            <Label fx:id="clientIdError" layoutX="19.0" layoutY="175.0" prefHeight="17.0" prefWidth="259.0" textFill="RED">
                <padding>
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Label fx:id="phoneError" layoutX="100.0" layoutY="232.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+            <Label fx:id="phoneError" layoutX="19.0" layoutY="232.0" prefHeight="17.0" prefWidth="259.0" textFill="RED">
                <padding>
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Label fx:id="emailError" layoutX="100.0" layoutY="289.0" prefHeight="17.0" prefWidth="178.0" textFill="RED">
+            <Label fx:id="emailError" layoutX="19.0" layoutY="289.0" prefHeight="17.0" prefWidth="259.0" textFill="RED">
                <padding>
                   <Insets left="10.0" />
                </padding>
