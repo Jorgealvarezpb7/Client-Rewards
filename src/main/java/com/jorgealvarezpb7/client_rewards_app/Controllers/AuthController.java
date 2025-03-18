@@ -30,7 +30,7 @@ public class AuthController extends AppNav {
         if (isAuthenticated) {
             this.goToDashboard();
         } else {
-            signInError.setText("El usuario o contraseña son incorrectos");
+            signInError.setText("El usuario o contraseña son incorrectos.");
         }
     }
 }

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jorgealvarezpb7.client_rewards_app.Models.Client;
-import com.jorgealvarezpb7.client_rewards_app.Models.Product;
 import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
 

@@ -1,4 +1,4 @@
-package com.jorgealvarezpb7.client_rewards_app.Services;
+package com.jorgealvarezpb7.client_rewards_app.Services.SaleService;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,10 +9,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import com.jorgealvarezpb7.client_rewards_app.Models.Sale;
+import com.jorgealvarezpb7.client_rewards_app.Services.Database;
 
 public class SaleService {
     private Database db;
-    
+
     public SaleService() {
         db = new Database();
     }
@@ -107,5 +108,9 @@ public class SaleService {
             System.err.println(err);
             return null;
         }
-    } 
+    }
+
+    public SaleSummary dailySummary() {
+        return new SaleSummary(10.0, 101, 0.01);
+    }
 }

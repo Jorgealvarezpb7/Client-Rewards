@@ -152,7 +152,7 @@
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="12.0" layoutY="76.0" text="200,65" textFill="WHITE">
+                              <Label fx:id="income" layoutX="12.0" layoutY="76.0" text="200,65" textFill="WHITE">
                                  <padding>
                                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                  </padding>
@@ -172,7 +172,7 @@
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="12.0" layoutY="76.0" text="13" textFill="WHITE">
+                              <Label fx:id="sales" layoutX="12.0" layoutY="76.0" text="13" textFill="WHITE">
                                  <padding>
                                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                  </padding>
@@ -201,7 +201,7 @@
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="12.0" layoutY="76.0" text="15,24" textFill="WHITE">
+                              <Label fx:id="average" layoutX="12.0" layoutY="76.0" text="15,24" textFill="WHITE">
                                  <padding>
                                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                  </padding>

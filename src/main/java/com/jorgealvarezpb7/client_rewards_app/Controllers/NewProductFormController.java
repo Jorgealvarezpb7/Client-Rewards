@@ -2,7 +2,6 @@ package com.jorgealvarezpb7.client_rewards_app.Controllers;
 
 import java.io.IOException;
 
-import com.jorgealvarezpb7.client_rewards_app.App;
 import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
 import com.jorgealvarezpb7.client_rewards_app.Utilities.Validator.Validator;
