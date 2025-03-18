@@ -111,6 +111,40 @@ public class SaleService {
     }
 
     public SaleSummary dailySummary() {
-        return new SaleSummary(10.0, 101, 0.01);
+        String query = """
+            SELECT * FROM sales
+            WHERE sales.createdAt 
+            BETWEEN ? AND ? 
+        """;
+
+        try {
+            PreparedStatement ps = db.getConn().prepareStatement(query);
+            int start = 1742258654;
+            int end  = 1742258854;
+
+            ps.setInt(1, start);
+            ps.setInt(2, end);
+
+            ResultSet rs = ps.executeQuery();
+            ArrayList<Sale> sales = new ArrayList<>();
+    
+            while (rs.next()) {
+                String productId = rs.getString("productId");
+                int quantity = rs.getInt("quantity");
+                String clientId = rs.getString("clientId");
+                Double totalAmount = rs.getDouble("totalAmount");
+                Double points = rs.getDouble("points");
+                Long createdAt = rs.getLong("createdAt");
+                Date date = new Date(createdAt);
+               
+                Sale sale = new Sale (productId, quantity, clientId, totalAmount, points, date);
+                sales.add(sale);
+            }
+            
+            return new SaleSummary(10.0, 101, 0.01);
+        } catch (SQLException err) {
+            System.err.println(err);
+            return null;
+        }
     }
 }
