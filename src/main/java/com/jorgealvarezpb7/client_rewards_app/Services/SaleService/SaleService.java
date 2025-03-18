@@ -5,7 +5,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.OffsetTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import com.jorgealvarezpb7.client_rewards_app.Models.Sale;
@@ -46,7 +55,8 @@ public class SaleService {
             ps.setInt(2, quantity);
             ps.setString(3, clientId);
             ps.setDouble(4, totalAmount);
-            ps.setLong(5, timestamp.getTime());
+            ps.setDouble(5, totalAmount * 0.10);
+            ps.setLong(6, timestamp.getTime());
             ps.execute();
         } catch (SQLException err) {
             System.err.println(err);
@@ -76,7 +86,7 @@ public class SaleService {
         String query = """
                 SELECT
                     sales.*,
-                    SUM(c.points) AS points
+                    SUM(c.points) AS clientPoints
                 FROM
                     sales
                     RIGHT JOIN clients c ON c.clientId = sales.clientId
@@ -85,6 +95,7 @@ public class SaleService {
                 GROUP BY
                     sales.clientId
                 """;
+
         try {
             Statement st = db.getConn().createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -95,7 +106,7 @@ public class SaleService {
                 int quantity = rs.getInt("quantity");
                 String clientId = rs.getString("clientId");
                 Double totalAmount = rs.getDouble("totalAmount");
-                Double points = rs.getDouble("points");
+                Double points = rs.getDouble("clientPoints");
                 Long createdAt = rs.getLong("createdAt");
                 Date date = new Date(createdAt);
                
@@ -119,11 +130,18 @@ public class SaleService {
 
         try {
             PreparedStatement ps = db.getConn().prepareStatement(query);
-            int start = 1742258654;
-            int end  = 1742258854;
+            LocalDate now = LocalDate.now();
+            
+            LocalDateTime startOfDay = now.atStartOfDay();
+            ZonedDateTime startOfDayZoned = startOfDay.atZone(ZoneId.systemDefault());
+            Date startTimestamp = Date.from(startOfDayZoned.toInstant());
 
-            ps.setInt(1, start);
-            ps.setInt(2, end);
+            LocalDateTime endOfDay = now.atTime(23, 59, 59, 999_999_999);
+            ZonedDateTime endOfDayZoned = endOfDay.atZone(ZoneId.systemDefault());
+            Date endTimestamp = Date.from(endOfDayZoned.toInstant());
+
+            ps.setLong(1, startTimestamp.getTime());
+            ps.setLong(2, endTimestamp.getTime());
 
             ResultSet rs = ps.executeQuery();
             ArrayList<Sale> sales = new ArrayList<>();
@@ -141,7 +159,23 @@ public class SaleService {
                 sales.add(sale);
             }
             
-            return new SaleSummary(10.0, 101, 0.01);
+            // almacenar en un variable "income" de tipo double el acumulado/sumatoria de
+            // ventas
+            Double income = 0.0;
+            int salesNumber = 0;
+            Double average = 0.0;
+
+            for (Sale sale : sales) {
+                income += sale.getTotalAmount();
+            }
+            salesNumber = sales.size();
+            if (salesNumber > 0) {
+            average = income/salesNumber;
+            } else {
+            average = 0.0;
+            }
+
+            return new SaleSummary (income, salesNumber, average);
         } catch (SQLException err) {
             System.err.println(err);
             return null;

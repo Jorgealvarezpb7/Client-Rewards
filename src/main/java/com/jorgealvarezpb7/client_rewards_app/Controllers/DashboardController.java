@@ -54,9 +54,14 @@ public class DashboardController extends AppNav implements Initializable {
      
          SaleSummary ss = this.authenticated.saleService.dailySummary();
          String ns = Integer.toString(ss.getSalesNumber());
-         income.setText(ss.getIncome().toString());
+
+         String ssf = String.format("%.2f", ss.getIncome());
+         income.setText(ssf);
+
          sales.setText(ns);
-         average.setText(ss.getAverage().toString());
+         
+         String ssf2 = String.format("%.2f", ss.getAverage());
+         average.setText(ssf2);
 
     }
 } 
