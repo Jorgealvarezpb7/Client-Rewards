@@ -6,12 +6,12 @@ public class Client {
     private String name;
     private String surname;
     private String id;
-    private Double points;
+    private Points points;
     private String phone;
     private String email;
     private Date createdAt;
 
-    public Client(String name, String surname, String id, Double points, String phone, String email, Date createdAt) { 
+    public Client(String name, String surname, String id, Points points, String phone, String email, Date createdAt) { 
         this.name = name;
         this.surname = surname;
         this.id = id;
@@ -45,11 +45,11 @@ public class Client {
         return id;
     }
 
-    public Double getPoints() {
+    public Points getPoints() {
         return points;
     }
 
-    public void setPoints(Double points) {
+    public void setPoints(Points points) {
         this.points = points;
     }
     
@@ -76,5 +76,4 @@ public class Client {
     public Date getCreatedAt() {
         return createdAt;
     }
-
 }

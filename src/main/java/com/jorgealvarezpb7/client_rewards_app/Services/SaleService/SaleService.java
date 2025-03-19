@@ -65,7 +65,7 @@ public class SaleService {
         String query2 = """
                 UPDATE clients
                     SET points = (
-                    SELECT CAST(SUM(totalAmount) * ? AS INTEGER)
+                    SELECT CAST(SUM(totalAmount) * 10 AS INTEGER)
                     FROM sales
                     WHERE sales.clientId = clients.clientId
                 )
@@ -73,9 +73,7 @@ public class SaleService {
                 """;
 
         try {
-            Double garcaLvl = 0.10;
             PreparedStatement ps  = db.getConn().prepareStatement(query2);
-            ps.setDouble(1, garcaLvl);
             ps.execute();
         } catch (SQLException err) {
             System.err.println(err);
