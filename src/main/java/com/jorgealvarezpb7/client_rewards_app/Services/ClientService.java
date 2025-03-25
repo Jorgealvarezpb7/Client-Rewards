@@ -67,7 +67,7 @@ public class ClientService {
             while (rs.next()) {
                 String name = rs.getString("name");
                 String surname = rs.getString("surname");
-                String id = rs.getString("clientId");
+                String id = rs.getString("id");
                 String phone = rs.getString("phone");
                 String email = rs.getString("email");
                 Double pointsDouble = rs.getDouble("points");

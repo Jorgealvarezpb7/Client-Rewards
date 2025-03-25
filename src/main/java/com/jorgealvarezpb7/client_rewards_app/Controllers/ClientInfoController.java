@@ -62,7 +62,7 @@ public class ClientInfoController extends AppNav implements Initializable {
                 topProduct3.setText(rp3.toListString());
             }
         } catch(Exception e) {
-            // 
+            System.out.println("On ClientInfo: " + e.toString());
         }
     }
 }
