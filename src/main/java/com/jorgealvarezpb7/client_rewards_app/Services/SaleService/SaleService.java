@@ -67,7 +67,7 @@ public class SaleService {
                     SET points = (
                     SELECT CAST(SUM(totalAmount) * 10 AS INTEGER)
                     FROM sales
-                    WHERE sales.clientId = clients.clientId
+                    WHERE sales.clientId = clients.id
                 )
                 WHERE clientId IN (SELECT DISTINCT clientId FROM sales);
                 """;
@@ -87,7 +87,7 @@ public class SaleService {
                     SUM(c.points) AS clientPoints
                 FROM
                     sales
-                    RIGHT JOIN clients c ON c.clientId = sales.clientId
+                    RIGHT JOIN clients c ON c.id = sales.clientId
                 WHERE
                     sales.totalAmount > 0
                 GROUP BY
