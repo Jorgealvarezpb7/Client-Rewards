@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import com.jorgealvarezpb7.client_rewards_app.Models.User;
 import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
+import com.jorgealvarezpb7.client_rewards_app.Services.Database;
 import com.jorgealvarezpb7.client_rewards_app.Services.SaleService.SaleSummary;
 
 import javafx.fxml.FXML;
@@ -16,7 +17,8 @@ import javafx.scene.control.Label;
 
 public class DashboardController extends AppNav implements Initializable {
     private Authenticated authenticated;
-
+    protected Database db;
+    
     @FXML private Label saludoUserType;
     @FXML private Label time;
     @FXML private Label date;
@@ -27,6 +29,8 @@ public class DashboardController extends AppNav implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        db = new Database();
+        db.runMigrations();
         this.authenticated = Authenticated.getInstance();
         User currentUser = this.authenticated.getCurrentUser();
         this.saludoUserType.setText(

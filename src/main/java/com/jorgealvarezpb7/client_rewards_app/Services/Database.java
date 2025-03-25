@@ -10,14 +10,17 @@ public class Database {
 
     public Database() {
         try {
+            System.out.println("SI VES ESTO HAY CONEXION [[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]");
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
         } catch(SQLException err) {
+            System.out.println("SI VES ESTO ES QUE NO HAY CONEXION [[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]");
             err.printStackTrace(System.err);
         }
     }
 
     public void runMigrations() {
         try {
+            System.out.println("APUNTO DE INICIAR LA BASE  [[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]");
             Statement st = conn.createStatement();
             st.execute("""
                 CREATE TABLE IF NOT EXISTS clients (
@@ -45,9 +48,10 @@ public class Database {
                     points REAL,
                     createdAt INTEGER
                 )""");
-        
+                System.out.println("SI ENTRA AQUI LA BASE CORRE [[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]");
         } catch (SQLException err) {
-            System.err.println(err.toString());
+            System.out.println("SI ENTRA AQUI HAY ERROR DURO MANAO [[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]");
+            System.out.println(err.toString());
         }
     }
 
