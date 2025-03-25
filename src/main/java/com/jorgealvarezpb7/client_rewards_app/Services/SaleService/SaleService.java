@@ -179,4 +179,42 @@ public class SaleService {
             return null;
         }
     }
+
+    public ArrayList<RecurrentPurchase> customerTop3Purchases(String clientId) {
+        String query = """
+            SELECT
+	            SUM(sales.quantity) AS totalQ,
+	            products."name"
+            FROM
+	            sales
+	            LEFT JOIN products ON products.id = sales.productId
+            WHERE
+	            sales.clientId = ?
+            GROUP BY
+	            sales.productId
+            ORDER BY
+	            totalQ DESC
+        """;
+
+        try {
+            PreparedStatement ps = db.getConn().prepareStatement(query);
+            ps.setString(1, clientId);
+
+            ResultSet rs = ps.executeQuery();
+            ArrayList<RecurrentPurchase> purchases = new ArrayList<>();
+    
+            while (rs.next()) {
+                String name = rs.getString("name");
+                int totalQ = rs.getInt("totalQ");
+               
+                RecurrentPurchase recurrentPurchase = new RecurrentPurchase (name, totalQ);
+                purchases.add(recurrentPurchase);
+            }
+            return purchases;            
+
+        } catch (SQLException err) {
+            System.err.println(err);
+            return null;
+        }
+    }
 }
