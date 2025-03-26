@@ -16,19 +16,38 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Optional;
 
+import com.jorgealvarezpb7.client_rewards_app.Models.Client;
+import com.jorgealvarezpb7.client_rewards_app.Models.Product;
 import com.jorgealvarezpb7.client_rewards_app.Models.Sale;
+import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
+import com.jorgealvarezpb7.client_rewards_app.Services.ClientService;
 import com.jorgealvarezpb7.client_rewards_app.Services.Database;
+import com.jorgealvarezpb7.client_rewards_app.Services.ProductService;
 
 public class SaleService {
     private Database db;
+    private ClientService clientService;
+    private ProductService productService;
 
-    public SaleService() {
+    public SaleService(ClientService clientService, ProductService productService) {
         db = new Database();
+        this.clientService = clientService;
+        this.productService = productService;
     }
 
-    public void createSale(String productId, int quantity, String clientId, Double totalAmount) {
-        //if (name.isEmpty()) { 
+    public void createSale(String productId, int quantity, String clientId, Double totalAmount) throws Exception {
+        Optional<Client> maybeClient = this.clientService.findClientById(clientId);
+        Optional<Product> maybeProduct = this.productService.findProductById(productId);
+
+        if (maybeClient.isEmpty()) {
+            throw new Exception("Cliente no existe");
+        }
+        if (maybeProduct.isEmpty()) {
+            throw new Exception("Producto no existe");
+        }
+    
         String query = """
             INSERT INTO sales (
                 productId,
@@ -69,7 +88,7 @@ public class SaleService {
                     FROM sales
                     WHERE sales.clientId = clients.id
                 )
-                WHERE clientId IN (SELECT DISTINCT clientId FROM sales);
+                WHERE clients.id IN (SELECT DISTINCT clientId FROM sales);
                 """;
 
         try {
@@ -83,15 +102,12 @@ public class SaleService {
     public ArrayList<Sale> listSales() {
         String query = """
                 SELECT
-                    sales.*,
-                    SUM(c.points) AS clientPoints
+	                sales.*
                 FROM
-                    sales
-                    RIGHT JOIN clients c ON c.id = sales.clientId
+	                sales
+	            RIGHT JOIN clients c ON c.id = sales.clientId
                 WHERE
-                    sales.totalAmount > 0
-                GROUP BY
-                    sales.clientId
+	                sales.totalAmount > 0
                 """;
 
         try {
@@ -104,7 +120,7 @@ public class SaleService {
                 int quantity = rs.getInt("quantity");
                 String clientId = rs.getString("clientId");
                 Double totalAmount = rs.getDouble("totalAmount");
-                Double points = rs.getDouble("clientPoints");
+                Double points = rs.getDouble("points");
                 Long createdAt = rs.getLong("createdAt");
                 Date date = new Date(createdAt);
                
@@ -157,8 +173,6 @@ public class SaleService {
                 sales.add(sale);
             }
             
-            // almacenar en un variable "income" de tipo double el acumulado/sumatoria de
-            // ventas
             Double income = 0.0;
             int salesNumber = 0;
             Double average = 0.0;

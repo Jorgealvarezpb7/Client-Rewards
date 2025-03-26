@@ -28,6 +28,8 @@ public class NewSaleFormController extends AppNav {
     @FXML private Label quantityError;
     @FXML private Label clientIdError;
     @FXML private Label totalAmountError;
+    @FXML private Label globalError;
+
 
     @FXML protected void handleCreateSale(ActionEvent event) throws IOException {
             try {
@@ -35,6 +37,8 @@ public class NewSaleFormController extends AppNav {
                 quantityError.setText("");
                 clientIdError.setText("");
                 totalAmountError.setText("");
+                globalError.setText("");
+                
 
                 String saleProductId = saleProductIdField.getText();
                 String saleQuantity = saleQuantityField.getText();
@@ -88,8 +92,8 @@ public class NewSaleFormController extends AppNav {
                             break;
                     }
                 } catch (Exception ex) {
+                    this.globalError.setText(ex.getMessage());
                     System.err.println(ex.toString());
                 }
             }    
-    
 }

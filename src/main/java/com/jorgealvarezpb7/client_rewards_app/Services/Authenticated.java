@@ -28,7 +28,7 @@ public final class Authenticated {
         db.runMigrations();
         clientService = new ClientService();
         productService = new ProductService();
-        saleService = new SaleService();
+        saleService = new SaleService(clientService, productService);
         currentUser = null;
     }
 

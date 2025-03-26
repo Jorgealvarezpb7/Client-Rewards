@@ -21,29 +21,32 @@ public class Database {
             Statement st = conn.createStatement();
             st.execute("""
                 CREATE TABLE IF NOT EXISTS clients (
+                    id TEXT PRIMARY KEY,
                     name TEXT,
                     surname TEXT,
                     points INTEGER,
-                    id TEXT,
                     phone TEXT,
                     email TEXT,
                     createdAt INTEGER
                 )""");
             st.execute("""
                 CREATE TABLE IF NOT EXISTS products (
+                    id TEXT PRIMARY KEY,
                     name TEXT,
-                    id TEXT,
                     quantity INTEGER,
-                    price REAL, createdAt INTEGER
+                    price REAL,
+                    createdAt INTEGER
                 )""");
             st.execute("""
                 CREATE TABLE IF NOT EXISTS sales (
-                    productId TEXT,
-                    quantity INTEGER,
-                    clientId TEXT,
-                    totalAmount REAL,
-                    points REAL,
-                    createdAt INTEGER
+	                quantity INTEGER,
+	                totalAmount REAL,
+	                points REAL,
+	                createdAt INTEGER,
+	                productId TEXT,
+	                clientId TEXT,
+	                FOREIGN KEY (clientId) REFERENCES clients(id),
+	                FOREIGN KEY (productId) REFERENCES products(id)
                 )""");
         } catch (SQLException err) {
             System.out.println(err.toString());

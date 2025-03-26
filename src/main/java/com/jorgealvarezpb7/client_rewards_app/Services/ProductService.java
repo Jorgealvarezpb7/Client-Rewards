@@ -7,7 +7,9 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Optional;
 
+import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 import com.jorgealvarezpb7.client_rewards_app.Models.Product;
 
 public class ProductService {
@@ -73,5 +75,13 @@ public class ProductService {
             System.err.println(err);
             return null;
         }
-    } 
+    }
+    
+     public Optional<Product> findProductById(String productId) {
+        ArrayList<Product> products = this.listProducts();
+        Optional<Product> maybeProducts = products.stream()
+                                              .filter((c) -> c.getId().equals(productId))
+                                              .findFirst();
+        return maybeProducts;
+    }
 }

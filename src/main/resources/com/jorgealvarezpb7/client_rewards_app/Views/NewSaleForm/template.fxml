@@ -34,11 +34,12 @@
                   <Insets left="10.0" right="10.0" />
                </padding></Label>
             <TextField fx:id="saleTotalAmountField" layoutX="120.0" layoutY="196.0" prefHeight="27.0" prefWidth="178.0" promptText="Monto total de la venta" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="290.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateSale" prefHeight="31.0" prefWidth="119.0" text="Registrar Venta" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="291.0" minWidth="53.0" mnemonicParsing="false" onAction="#handleCreateSale" prefHeight="31.0" prefWidth="119.0" text="Registrar Venta" />
             <Label fx:id="productIdError" layoutX="20.0" layoutY="59.0" prefHeight="17.0" prefWidth="277.0" textFill="RED" />
             <Label fx:id="quantityError" layoutX="20.0" layoutY="115.0" prefHeight="17.0" prefWidth="277.0" textFill="RED" />
             <Label fx:id="clientIdError" layoutX="20.0" layoutY="172.0" prefHeight="17.0" prefWidth="277.0" textFill="RED" />
             <Label fx:id="totalAmountError" layoutX="20.0" layoutY="229.0" prefHeight="17.0" prefWidth="277.0" textFill="RED" />
+            <Label fx:id="globalError" alignment="CENTER" layoutX="20.0" layoutY="250.0" prefHeight="17.0" prefWidth="277.0" textFill="RED" />
          </children>
       </Pane>
       <VBox layoutX="-5.0" prefHeight="600.0" prefWidth="65.0" styleClass="sidebar" stylesheets="@../../Styles/stylesheet.css">
