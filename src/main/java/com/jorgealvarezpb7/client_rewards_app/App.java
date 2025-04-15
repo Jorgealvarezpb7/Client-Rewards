@@ -1,6 +1,7 @@
 package com.jorgealvarezpb7.client_rewards_app;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -26,8 +27,11 @@ public class App extends Application {
         stage.setResizable(false);
         stage.show();
 
-        Image image = new Image(App.class.getResource("Images/logoApp.png").toString());
-        stage.getIcons().add(image);
+        Platform.runLater(() -> {
+            stage.show();
+            Image image = new Image(App.class.getResource("Images/logoApp.png").toString());
+            stage.getIcons().add(image);
+        });
     }
     public static void setRoot(String fxml) throws IOException {
         Authenticated.getInstance();
