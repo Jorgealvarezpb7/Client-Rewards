@@ -73,3 +73,9 @@
 .button_sb:active {
   -fx-background-color:rgba(248, 249, 249, 0.55);
 }
+
+.combo_box {
+  -fx-background-color: #FFFFFF;
+  -fx-border-color: #CCCCCC;
+  -fx-border-radius: 3px;
+}

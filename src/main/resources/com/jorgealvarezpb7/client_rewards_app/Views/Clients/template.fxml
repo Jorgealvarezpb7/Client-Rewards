@@ -122,6 +122,11 @@
                   </HBox>
                   <HBox alignment="BOTTOM_RIGHT">
                      <children>
+                        <Label prefHeight="17.0" prefWidth="410.0" text="Para mayor informacion sobre el cliente, haz doble click en su nombre." textFill="#79797c">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="40.0" right="300.0" />
+                           </HBox.margin>
+                        </Label>
                         <Button id="agregarCliente" layoutX="745.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToNewClientForm" prefHeight="26.0" prefWidth="107.0" styleClass="button_sb" stylesheets="@../../Styles/stylesheet.css" text="Crear Cliente">
                            <HBox.margin>
                               <Insets right="40.0" />
