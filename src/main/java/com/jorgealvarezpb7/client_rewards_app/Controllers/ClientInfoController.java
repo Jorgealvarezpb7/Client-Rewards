@@ -15,15 +15,23 @@ import javafx.scene.control.Label;
 
 public class ClientInfoController extends AppNav implements Initializable {
 
-    @FXML private Label nombreCliente;
-    @FXML private Label phoneNumber;
-    @FXML private Label emailAddress;
-    @FXML private Label points;
-    @FXML private Label applicableDiscount;
+    @FXML
+    private Label nombreCliente;
+    @FXML
+    private Label phoneNumber;
+    @FXML
+    private Label emailAddress;
+    @FXML
+    private Label points;
+    @FXML
+    private Label applicableDiscount;
 
-    @FXML private Label topProduct1;
-    @FXML private Label topProduct2;
-    @FXML private Label topProduct3;
+    @FXML
+    private Label topProduct1;
+    @FXML
+    private Label topProduct2;
+    @FXML
+    private Label topProduct3;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -31,21 +39,21 @@ public class ClientInfoController extends AppNav implements Initializable {
         Client current = authenticated.getActiveClient();
 
         this.nombreCliente.setText(current.getName());
-        double applicableDiscount = current.getPoints().toApplicableDiscount();
-        String pointsStr = current.getPoints().toString();
 
-        points.setText(pointsStr);
-        String appDisctStr = String.format("%d", (int) applicableDiscount);
-        this.applicableDiscount.setText(appDisctStr + "%");
+        int pointsValue = current.getPoints().getInner();
+        int applicableDiscountValue = (int) Math.round(pointsValue * 0.10f);
+
+        points.setText(current.getPoints().toString());
+        this.applicableDiscount.setText(applicableDiscountValue + "%");
 
         phoneNumber.setText("movil: " + current.getPhone());
-        emailAddress.setText("movil: " + current.getEmail());
+        emailAddress.setText("correo: " + current.getEmail());
 
         ArrayList<RecurrentPurchase> rp = authenticated.saleService.customerTop3Purchases(current.getId());
 
-        try  {
+        try {
             RecurrentPurchase rp1 = rp.get(0);
-    
+
             if (rp1 != null) {
                 topProduct1.setText(rp1.toListString());
             }
@@ -55,14 +63,20 @@ public class ClientInfoController extends AppNav implements Initializable {
             if (rp2 != null) {
                 topProduct2.setText(rp2.toListString());
             }
-    
+
             RecurrentPurchase rp3 = rp.get(2);
-    
+
             if (rp3 != null) {
                 topProduct3.setText(rp3.toListString());
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("On ClientInfo: " + e.toString());
+        }
+
+        System.out.println("Cliente actual: " + current.getName() + ", ID: " + current.getId());
+        System.out.println("Top productos:");
+        for (RecurrentPurchase item : rp) {
+            System.out.println(item.toListString());
         }
     }
 }

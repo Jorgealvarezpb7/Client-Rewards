@@ -5,7 +5,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -137,7 +136,7 @@
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="points" layoutX="12.0" layoutY="76.0" text="200" textFill="WHITE">
+                              <Label fx:id="points" layoutX="12.0" layoutY="76.0" prefHeight="56.0" prefWidth="138.0" text="200" textFill="WHITE">
                                  <padding>
                                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                  </padding>
@@ -157,9 +156,9 @@
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="applicableDiscount" layoutX="12.0" layoutY="76.0" prefHeight="56.0" prefWidth="83.0" text="35%" textFill="WHITE">
+                              <Label fx:id="applicableDiscount" layoutX="12.0" layoutY="76.0" prefHeight="56.0" prefWidth="125.0" text="35%" textFill="WHITE">
                                  <padding>
-                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                    <Insets bottom="15.0" left="15.0" top="15.0" />
                                  </padding>
                                  <font>
                                     <Font name="System Bold" size="20.0" />
@@ -216,9 +215,9 @@
                   </HBox>
                </children>
             </VBox>
-            <HBox layoutX="42.0" layoutY="273.0" prefHeight="150.0" prefWidth="383.0" stylesheets="@../stylesheet.css">
+            <HBox layoutX="42.0" layoutY="273.0" prefHeight="107.0" prefWidth="383.0" stylesheets="@../stylesheet.css">
                <children>
-                  <Label text="Top 3 Items:">
+                  <Label prefHeight="49.0" prefWidth="114.0" text="Top 3 Items:">
                      <padding>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </padding>
@@ -226,7 +225,26 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <ListView prefHeight="148.0" prefWidth="246.0" />
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <VBox prefHeight="144.0" prefWidth="257.0">
+                     <children>
+                        <Label fx:id="topProduct1" prefHeight="17.0" prefWidth="239.0">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="topProduct2" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="239.0">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="topProduct3" layoutX="10.0" layoutY="27.0" prefHeight="17.0" prefWidth="239.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
                </children>
                <styleClass>
                   <String fx:value="contact_pane" />

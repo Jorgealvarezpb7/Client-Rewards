@@ -25,7 +25,7 @@ public class Points {
     }
 
     public double toApplicableDiscount() {
-        return this.inner / 0.10;
+        return this.inner * FACTOR;
     }
 
     @Override

@@ -49,7 +49,6 @@ public class NewSaleFormController extends AppNav implements Initializable {
     }
 }
 
-
     public NewSaleFormController() {
         this.authenticated = Authenticated.getInstance();
     }
@@ -70,7 +69,6 @@ public class NewSaleFormController extends AppNav implements Initializable {
                 totalAmountError.setText("");
                 globalError.setText("");
                 
-
                 String saleProductId = saleProductIdCbox.getValue();
                 String saleQuantity = saleQuantityField.getText();
                 String saleClientId = saleClientIdCbox.getValue();
