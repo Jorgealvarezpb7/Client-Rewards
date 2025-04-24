@@ -48,6 +48,14 @@ public class Database {
 	                FOREIGN KEY (clientId) REFERENCES clients(id),
 	                FOREIGN KEY (productId) REFERENCES products(id)
                 )""");
+            st.execute("""
+                CREATE TABLE IF NOT EXISTS users (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    username TEXT UNIQUE NOT NULL,
+                    password TEXT NOT NULL,
+                    role TEXT NOT NULL
+                )""");
+
         } catch (SQLException err) {
             System.out.println(err.toString());
         }

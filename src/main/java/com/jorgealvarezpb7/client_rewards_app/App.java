@@ -21,7 +21,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Views/Auth/template"), 1024, 600);
+        scene = new Scene(loadFXML("Views/Login/template"), 1024, 600);
         stage.setTitle("Puntos y Descuentos");
         stage.setScene(scene);
         stage.setResizable(false);

@@ -72,11 +72,5 @@ public class ClientInfoController extends AppNav implements Initializable {
         } catch (Exception e) {
             System.out.println("On ClientInfo: " + e.toString());
         }
-
-        System.out.println("Cliente actual: " + current.getName() + ", ID: " + current.getId());
-        System.out.println("Top productos:");
-        for (RecurrentPurchase item : rp) {
-            System.out.println(item.toListString());
-        }
     }
 }

@@ -6,6 +6,10 @@ import com.jorgealvarezpb7.client_rewards_app.App;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 public class AppNav {
     
     @FXML
@@ -50,6 +54,16 @@ public class AppNav {
 
     @FXML
     public void signOut() throws IOException {
-        App.setRoot("Views/Auth/template");
+        App.setRoot("Views/Login/template");
+    }
+    
+    @FXML
+    public void goToLogin() throws IOException {
+        App.setRoot("Views/Login/template");
+    }
+    
+    @FXML
+    public void goToRegister() throws IOException {
+        App.setRoot("Views/Register/template");
     }
 }

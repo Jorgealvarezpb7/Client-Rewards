@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jorgealvarezpb7.client_rewards_app.Controllers.RegisterController">
+   <children>
+      <Pane layoutX="337.0" layoutY="111.0" prefHeight="350.0" prefWidth="338.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="110.0">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="123.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/logoApp.png" />
+               </image>
+            </ImageView>
+
+            <Label layoutX="11.0" layoutY="110.0" text="Nuevo usuario:">
+               <padding><Insets left="10.0" /></padding>
+            </Label>
+            <TextField fx:id="newUsernameField" layoutX="150.0" layoutY="107.0" />
+
+            <Label layoutX="11.0" layoutY="155.0" text="Contraseña:">
+               <padding><Insets left="10.0" /></padding>
+            </Label>
+            <PasswordField fx:id="newPasswordField" layoutX="150.0" layoutY="152.0" />
+
+            <Label layoutX="11.0" layoutY="200.0" text="Confirmar contraseña:">
+               <padding><Insets left="10.0" /></padding>
+            </Label>
+            <PasswordField fx:id="confirmPasswordField" layoutX="150.0" layoutY="197.0" />
+
+            <Label fx:id="registerError" layoutX="13.0" layoutY="228.0" prefHeight="17.0" prefWidth="298.0" textFill="RED" />
+
+            <Button layoutX="125.0" layoutY="254.0" onAction="#handleRegisterButtonAction" prefWidth="80.0" text="Registrar" />
+
+            <Button layoutX="125.0" layoutY="301.0" onAction="#goToLogin" prefHeight="26.0" prefWidth="80.0" text="Volver" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

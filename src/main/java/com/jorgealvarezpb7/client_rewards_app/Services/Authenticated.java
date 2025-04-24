@@ -1,5 +1,8 @@
 package com.jorgealvarezpb7.client_rewards_app.Services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 import com.jorgealvarezpb7.client_rewards_app.Models.User;
 import com.jorgealvarezpb7.client_rewards_app.Services.SaleService.SaleService;
@@ -10,6 +13,8 @@ public final class Authenticated {
     public ProductService productService;
     public SaleService saleService;
     public User currentUser;
+    public UserService userService;
+
 
     private Client activeClient = null;
 
@@ -28,6 +33,7 @@ public final class Authenticated {
         db.runMigrations();
         clientService = new ClientService();
         productService = new ProductService();
+        userService = new UserService(db);
         saleService = new SaleService(clientService, productService);
         currentUser = null;
     }
@@ -40,19 +46,20 @@ public final class Authenticated {
         return this.currentUser;
     }
 
-    public boolean authenticate(String user, String pass) {
-        System.out.println("Auth: " + user + " : " + pass);
-
-        if (user.equals(Authenticated.ADMIN_USER_NAME) && pass.equals(Authenticated.ADMIN_USER_PSWD)) {
-            this.currentUser = new User(user, pass, "admin");
+    public boolean authenticate(String username, String password) {
+        System.out.println("Auth: " + username + " : " + password);
+    
+        if (username.equals(ADMIN_USER_NAME) && password.equals(ADMIN_USER_PSWD)) {
+            this.currentUser = new User(username, password, "admin");
             return true;
         }
-
-        if (user.equals(Authenticated.BASIC_USER_NAME) && pass.equals(Authenticated.BASIC_USER_PSWD)) {
-            this.currentUser = new User(user, pass, "basic");
+    
+        User foundUser = userService.findUser(username, password);
+        if (foundUser != null) {
+            this.currentUser = foundUser;
             return true;
         }
-
+    
         return false;
     }
 
@@ -62,5 +69,9 @@ public final class Authenticated {
 
     public Client getActiveClient() {
         return activeClient;
+    }
+
+    public boolean register(String username, String password) {
+        return userService.registerUser(username, password, "basic");
     }
 }

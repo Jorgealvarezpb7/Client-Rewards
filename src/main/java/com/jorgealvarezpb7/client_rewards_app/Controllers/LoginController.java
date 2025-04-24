@@ -2,6 +2,7 @@ package com.jorgealvarezpb7.client_rewards_app.Controllers;
 
 import java.io.IOException;
 
+import com.jorgealvarezpb7.client_rewards_app.App;
 import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
 
@@ -11,10 +12,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class AuthController extends AppNav {
+public class LoginController extends AppNav {
     private Authenticated authenticated;
 
-    public AuthController() {
+    public LoginController() {
         authenticated = Authenticated.getInstance();
     }
 
