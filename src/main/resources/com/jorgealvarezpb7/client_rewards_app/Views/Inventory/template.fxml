@@ -102,6 +102,28 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
+                        <Label fx:id="date" alignment="CENTER" contentDisplay="RIGHT" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="157.0" text="date" textFill="#0000006c">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="150.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="time" alignment="CENTER" contentDisplay="RIGHT" layoutX="136.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="154.0" text="time" textFill="#0000006c">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
                      </children>
                   </HBox>
                   <HBox fillHeight="false" prefHeight="345.0" prefWidth="882.0">

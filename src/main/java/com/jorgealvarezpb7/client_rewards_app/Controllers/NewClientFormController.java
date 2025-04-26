@@ -25,7 +25,6 @@ public class NewClientFormController extends AppNav {
         this.authenticated = Authenticated.getInstance();
     }
 
-    // Error Labels
     @FXML private Label nameError;
     @FXML private Label surnameError;
     @FXML private Label clientIdError;

@@ -7,11 +7,13 @@ import java.util.ResourceBundle;
 import com.jorgealvarezpb7.client_rewards_app.Models.Sale;
 import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
+import com.jorgealvarezpb7.client_rewards_app.Services.ClockService;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,6 +28,10 @@ public class SalesController extends AppNav implements Initializable{
     @FXML private TableColumn<Sale, String> totalAmountColumn;
     @FXML private TableColumn<Sale, Double> pointsColumn;
     @FXML private TableColumn<Sale, Integer> createdAtColumn;
+
+    @FXML private Label time;
+    @FXML private Label date;
+    private ClockService clockService;
 
     public SalesController() {
         this.authenticated = Authenticated.getInstance();
@@ -43,5 +49,8 @@ public class SalesController extends AppNav implements Initializable{
         pointsColumn.setCellValueFactory(new PropertyValueFactory<Sale, Double>("points"));
         createdAtColumn.setCellValueFactory(new PropertyValueFactory<Sale, Integer>("createdAt"));
         salesTable.setItems(salesObs);
+
+        clockService = new ClockService(time, date);
+        clockService.start();
     }
 }

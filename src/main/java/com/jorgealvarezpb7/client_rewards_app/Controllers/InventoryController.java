@@ -7,11 +7,13 @@ import java.util.ResourceBundle;
 import com.jorgealvarezpb7.client_rewards_app.Models.Product;
 import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
+import com.jorgealvarezpb7.client_rewards_app.Services.ClockService;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,6 +28,10 @@ public class InventoryController extends AppNav implements Initializable {
     @FXML private TableColumn<Product, Integer> quantityColumn;
     @FXML private TableColumn<Product, String> priceColumn;
     @FXML private TableColumn<Product, Integer> createdAtColumn;
+
+    @FXML private Label time;
+    @FXML private Label date;
+    private ClockService clockService;
 
     public InventoryController() {
         this.authenticated = Authenticated.getInstance();
@@ -42,6 +48,9 @@ public class InventoryController extends AppNav implements Initializable {
         priceColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("priceWithCurrency"));
         createdAtColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("createdAt"));
         productsTable.setItems(productsObs);
+
+        clockService = new ClockService(time, date);
+        clockService.start();
     }
 }
 

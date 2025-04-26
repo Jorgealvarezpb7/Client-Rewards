@@ -7,11 +7,13 @@ import java.util.ResourceBundle;
 import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
+import com.jorgealvarezpb7.client_rewards_app.Services.ClockService;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -28,6 +30,10 @@ public class ClientsController extends AppNav implements Initializable {
     @FXML private TableColumn<Client, String> phoneColumn;
     @FXML private TableColumn<Client, String> emailColumn;
     @FXML private TableColumn<Client, Integer> createdAtColumn;
+
+    @FXML private Label time;
+    @FXML private Label date;
+    private ClockService clockService;
 
     public ClientsController() {
         this.authenticated = Authenticated.getInstance();
@@ -65,5 +71,8 @@ public class ClientsController extends AppNav implements Initializable {
         });
 
         clientsTable.setItems(clientsObs);
+
+        clockService = new ClockService(time, date);
+        clockService.start();
     }
 }

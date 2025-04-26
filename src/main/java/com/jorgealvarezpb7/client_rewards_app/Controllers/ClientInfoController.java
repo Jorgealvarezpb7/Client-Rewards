@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
+import com.jorgealvarezpb7.client_rewards_app.Services.ClockService;
 import com.jorgealvarezpb7.client_rewards_app.Services.SaleService.RecurrentPurchase;
 
 import javafx.fxml.FXML;
@@ -15,23 +16,20 @@ import javafx.scene.control.Label;
 
 public class ClientInfoController extends AppNav implements Initializable {
 
-    @FXML
-    private Label nombreCliente;
-    @FXML
-    private Label phoneNumber;
-    @FXML
-    private Label emailAddress;
-    @FXML
-    private Label points;
-    @FXML
-    private Label applicableDiscount;
+    @FXML private Label nombreCliente;
+    @FXML private Label phoneNumber;
+    @FXML private Label emailAddress;
+    @FXML private Label points;
+    @FXML private Label applicableDiscount;
 
-    @FXML
-    private Label topProduct1;
-    @FXML
-    private Label topProduct2;
-    @FXML
-    private Label topProduct3;
+    @FXML private Label topProduct1;
+    @FXML private Label topProduct2;
+    @FXML private Label topProduct3;
+
+    @FXML private Label time;
+    @FXML private Label date;
+    private ClockService clockService;
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -72,5 +70,8 @@ public class ClientInfoController extends AppNav implements Initializable {
         } catch (Exception e) {
             System.out.println("On ClientInfo: " + e.toString());
         }
+
+        clockService = new ClockService(time, date);
+        clockService.start();
     }
 }
