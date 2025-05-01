@@ -1,8 +1,5 @@
 package com.jorgealvarezpb7.client_rewards_app.Services;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 import com.jorgealvarezpb7.client_rewards_app.Models.User;
 import com.jorgealvarezpb7.client_rewards_app.Services.SaleService.SaleService;
@@ -51,6 +48,11 @@ public final class Authenticated {
     
         if (username.equals(ADMIN_USER_NAME) && password.equals(ADMIN_USER_PSWD)) {
             this.currentUser = new User(username, password, "admin");
+            return true;
+        }
+
+        if (username.equals(BASIC_USER_NAME) && password.equals(BASIC_USER_PSWD)) {
+            this.currentUser = new User(username, password, "user");
             return true;
         }
     

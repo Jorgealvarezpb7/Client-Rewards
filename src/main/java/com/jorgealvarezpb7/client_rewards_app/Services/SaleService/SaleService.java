@@ -5,23 +5,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.time.Instant;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetTime;
+
 import java.time.ZoneId;
-import java.time.ZoneOffset;
+
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
+
 import java.util.Date;
 import java.util.Optional;
 
 import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 import com.jorgealvarezpb7.client_rewards_app.Models.Product;
 import com.jorgealvarezpb7.client_rewards_app.Models.Sale;
-import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
 import com.jorgealvarezpb7.client_rewards_app.Services.ClientService;
 import com.jorgealvarezpb7.client_rewards_app.Services.Database;
 import com.jorgealvarezpb7.client_rewards_app.Services.ProductService;
@@ -77,6 +75,7 @@ public class SaleService {
             ps.setDouble(5, totalAmount * 0.10);
             ps.setLong(6, timestamp.getTime());
             ps.execute();
+            ps.close();
         } catch (SQLException err) {
             System.err.println(err);
         }
@@ -94,6 +93,7 @@ public class SaleService {
         try {
             PreparedStatement ps  = db.getConn().prepareStatement(query2);
             ps.execute();
+            ps.close();
         } catch (SQLException err) {
             System.err.println(err);
         }
@@ -127,7 +127,7 @@ public class SaleService {
                 Sale sale = new Sale (productId, quantity, clientId, totalAmount, points, date);
                 sales.add(sale);
             }
-            
+            rs.close();
             return sales;
         } catch (SQLException err) {
             System.err.println(err);
@@ -172,6 +172,8 @@ public class SaleService {
                 Sale sale = new Sale (productId, quantity, clientId, totalAmount, points, date);
                 sales.add(sale);
             }
+
+            rs.close();
             
             Double income = 0.0;
             int salesNumber = 0;
@@ -186,10 +188,10 @@ public class SaleService {
             } else {
             average = 0.0;
             }
-
+ 
             return new SaleSummary (income, salesNumber, average);
         } catch (SQLException err) {
-            System.err.println(err);
+            System.err.println("Failed to perform DailySummary: " + err);
             return null;
         }
     }
@@ -224,6 +226,7 @@ public class SaleService {
                 RecurrentPurchase recurrentPurchase = new RecurrentPurchase (name, totalQ);
                 purchases.add(recurrentPurchase);
             }
+            rs.close();
             return purchases;            
 
         } catch (SQLException err) {

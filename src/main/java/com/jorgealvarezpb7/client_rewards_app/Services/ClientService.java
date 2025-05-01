@@ -52,8 +52,9 @@ public class ClientService {
             ps.setString(5, email);
             ps.setLong(6, timestamp.getTime());
             ps.execute();
+            ps.close();
         } catch (SQLException err) {
-            System.err.println(err);
+            System.err.println("Failed to create client in DB: " + err);
         }
     }
 
@@ -78,9 +79,10 @@ public class ClientService {
                 clients.add(client);
             }
 
+            rs.close();
             return clients;
         } catch (SQLException err) {
-            System.err.println(err);
+            System.err.println("Failed to list clients from DB: " + err);
             return null;
         }
     }

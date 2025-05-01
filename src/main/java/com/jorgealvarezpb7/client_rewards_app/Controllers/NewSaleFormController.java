@@ -53,7 +53,6 @@ public class NewSaleFormController extends AppNav implements Initializable {
         this.authenticated = Authenticated.getInstance();
     }
 
-       // Error Labels
     @FXML private Label productIdError;
     @FXML private Label quantityError;
     @FXML private Label clientIdError;

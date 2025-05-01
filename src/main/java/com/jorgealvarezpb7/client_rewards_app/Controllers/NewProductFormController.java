@@ -24,7 +24,6 @@ public class NewProductFormController extends AppNav {
         this.authenticated = Authenticated.getInstance();
     }
 
-     // Error Labels
     @FXML private Label nameError;
     @FXML private Label idError;
     @FXML private Label quantityError;

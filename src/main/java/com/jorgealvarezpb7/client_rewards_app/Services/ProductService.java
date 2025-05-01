@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Optional;
 
-import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 import com.jorgealvarezpb7.client_rewards_app.Models.Product;
 
 public class ProductService {
@@ -47,6 +46,7 @@ public class ProductService {
             ps.setDouble(4, price);
             ps.setLong(5, timestamp.getTime());
             ps.execute();
+            ps.close();
         } catch (SQLException err) {
             System.err.println(err);
         }
@@ -69,7 +69,8 @@ public class ProductService {
                 Product product = new Product (name, id, quantity, price, date);
                 products.add(product);
             }
-            
+
+            rs.close();
             return products;
         } catch (SQLException err) {
             System.err.println(err);

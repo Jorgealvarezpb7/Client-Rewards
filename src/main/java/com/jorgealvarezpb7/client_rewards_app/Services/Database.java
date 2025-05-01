@@ -12,7 +12,7 @@ public class Database {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:database.db");
         } catch(SQLException err) {
-            err.printStackTrace(System.err);
+            System.out.println("Failed to get database connection: " + err.getMessage());
         }
     }
 
@@ -55,7 +55,7 @@ public class Database {
                     password TEXT NOT NULL,
                     role TEXT NOT NULL
                 )""");
-
+            st.close();
         } catch (SQLException err) {
             System.out.println(err.toString());
         }

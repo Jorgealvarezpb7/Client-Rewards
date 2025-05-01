@@ -18,7 +18,12 @@ public class UserService {
             checkStmt.setString(1, username);
             ResultSet rs = checkStmt.executeQuery();
 
-            if (rs.next()) return false;
+            if (rs.next()) {
+                rs.close();
+                return false;
+            }
+
+            rs.close();
 
             String insertQuery = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
             PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
@@ -26,6 +31,7 @@ public class UserService {
             insertStmt.setString(2, password);
             insertStmt.setString(3, role);
             insertStmt.executeUpdate();
+            insertStmt.close();
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -43,11 +49,15 @@ public class UserService {
 
             if (rs.next()) {
                 String role = rs.getString("role");
+                rs.close();
                 return new User(username, password, role);
             }
+
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return null;
     }
 }

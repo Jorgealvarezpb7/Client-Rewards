@@ -1,9 +1,7 @@
 package com.jorgealvarezpb7.client_rewards_app.Controllers;
 
-import com.jorgealvarezpb7.client_rewards_app.Models.User;
 import com.jorgealvarezpb7.client_rewards_app.Services.Authenticated;
 import com.jorgealvarezpb7.client_rewards_app.Services.AppNav;
-import com.jorgealvarezpb7.client_rewards_app.App;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -22,7 +20,7 @@ public class RegisterController extends AppNav {
     private final Authenticated authenticated = Authenticated.getInstance();
 
     @FXML
-protected void handleRegisterButtonAction() throws IOException {
+    protected void handleRegisterButtonAction() throws IOException {
     String username = newUsernameField.getText().trim();
     String password = newPasswordField.getText().trim();
     String confirmPassword = confirmPasswordField.getText().trim();
