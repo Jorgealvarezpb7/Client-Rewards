@@ -1,8 +1,5 @@
 package com.jorgealvarezpb7.client_rewards_app.Services;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.jorgealvarezpb7.client_rewards_app.Models.Client;
 import com.jorgealvarezpb7.client_rewards_app.Models.User;
 import com.jorgealvarezpb7.client_rewards_app.Services.SaleService.SaleService;
