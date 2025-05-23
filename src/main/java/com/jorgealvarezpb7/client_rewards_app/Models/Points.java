@@ -1,7 +1,7 @@
 package com.jorgealvarezpb7.client_rewards_app.Models;
 
 public class Points {
-    private final static double FACTOR = 0.10;
+    private final static double FACTOR = 0.01;
     private int inner;
 
     private Points(double value) {

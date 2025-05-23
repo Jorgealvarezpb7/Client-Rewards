@@ -12,10 +12,9 @@ public final class Authenticated {
     public User currentUser;
     public UserService userService;
 
-
     private Client activeClient = null;
 
-    public volatile boolean stop = false;
+    private final static Authenticated INSTANCE = new Authenticated();
 
     private static final String ADMIN_USER_NAME = "admin";
     private static final String ADMIN_USER_PSWD = "admin";
@@ -23,7 +22,6 @@ public final class Authenticated {
     private static final String BASIC_USER_NAME = "user";
     private static final String BASIC_USER_PSWD = "user";
 
-    private final static Authenticated INSTANCE = new Authenticated();
 
     private Authenticated() {
         db = new Database();
@@ -48,6 +46,11 @@ public final class Authenticated {
     
         if (username.equals(ADMIN_USER_NAME) && password.equals(ADMIN_USER_PSWD)) {
             this.currentUser = new User(username, password, "admin");
+            return true;
+        }
+
+        if (username.equals(BASIC_USER_NAME) && password.equals(BASIC_USER_PSWD)) {
+            this.currentUser = new User(username, password, "user");
             return true;
         }
     

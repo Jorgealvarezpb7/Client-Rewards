@@ -39,7 +39,7 @@ public class ClientInfoController extends AppNav implements Initializable {
         this.nombreCliente.setText(current.getName());
 
         int pointsValue = current.getPoints().getInner();
-        int applicableDiscountValue = (int) Math.round(pointsValue * 0.10f);
+        int applicableDiscountValue = (int) Math.round(pointsValue * 0.01f);
 
         points.setText(current.getPoints().toString());
         this.applicableDiscount.setText(applicableDiscountValue + "%");

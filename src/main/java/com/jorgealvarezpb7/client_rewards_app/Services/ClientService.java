@@ -20,7 +20,6 @@ public class ClientService {
     }
 
     public void createClient(String name, String surname, String id, String phone, String email) {
-        // if (name.isEmpty()) {
         String query = """
                     INSERT INTO clients (
                         name,

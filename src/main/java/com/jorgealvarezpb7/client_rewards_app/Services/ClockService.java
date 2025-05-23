@@ -30,7 +30,7 @@ public class ClockService {
                 });
 
                 try {
-                    Thread.sleep(1000); // Actualiza cada segundo
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
